@@ -5,8 +5,6 @@
   "description": "Block distracting websites and stay focused!",
   "permissions": [
     "storage",
-    "declarativeNetRequest",
-    "declarativeNetRequestWithHostAccess",
     "tabs",
   "scripting",
   "storage"
@@ -18,7 +16,17 @@
     "service_worker": "background.js"
   },
   "action": {
-    "default_popup": "popup.html"
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon128.png",
+      "48": "icons/icon128.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon128.png",
+    "48": "icons/icon128.png",
+    "128": "icons/icon128.png"
   }
 
 }

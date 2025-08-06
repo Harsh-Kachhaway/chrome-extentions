@@ -32,22 +32,43 @@ chrome.tabs.onUpdated.addListener(async (tabId, changeInfo, tab) => {
 
   const url = tab.url || changeInfo.url;
 
-  if (blocklist.some(site => url.includes(site))) {
-    // Inject script that hides page content
-    chrome.scripting.executeScript({
-  target: { tabId: tabId },
-  func: () => {
-    document.body.innerHTML = `
-      <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100vh;font-family:sans-serif;text-align:center">
-        <h1 style="font-size:3rem;">🚫 Blocked during Focus Mode</h1>
-        <p style="font-size:1.5rem;">Stay focused, come back later.</p>
-      </div>
-    `;
-    document.title = "Blocked Site";
-  }
-});
+//   if (blocklist.some(site => url.includes(site))) {
+//     // Inject script that hides page content
+//     chrome.scripting.executeScript({
+//   target: { tabId: tabId },
+//   func: () => {
+//     document.body.innerHTML = `
+//       <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100vh;font-family:sans-serif;text-align:center">
+//         <h1 style="font-size:3rem;">🚫 Blocked during Focus Mode</h1>
+//         <p style="font-size:1.5rem;">Stay focused, come back later.</p>
+//       </div>
+//     `;
+//     document.title = "Blocked Site";
+//   }
+// });
 
+//   }
+
+try {
+  const hostname = new URL(url).hostname.replace(/^www\./, "");
+  if (blocklist.some(site => hostname === site || hostname.endsWith("." + site))) {
+    chrome.scripting.executeScript({
+      target: { tabId: tabId },
+      func: () => {
+        document.body.innerHTML = `
+          <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100vh;font-family:sans-serif;text-align:center">
+            <h1 style="font-size:3rem;">🚫 Blocked during Focus Mode</h1>
+            <p style="font-size:1.5rem;">Stay focused, come back later.</p>
+          </div>
+        `;
+        document.title = "Blocked Site";
+      }
+    });
   }
+} catch (e) {
+  console.error("Invalid URL", url);
+}
+
 });
 
 

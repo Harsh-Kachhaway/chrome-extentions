@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body { font-family: sans-serif; padding: 10px; width: 300px; }
+    #siteList li { display: flex; justify-content: space-between; margin: 4px 0; }
+    button { margin-left: 10px; }
+    #timerSection { margin-top: 15px; }
+    input[type="number"] { width: 60px; }
+  </style>
+</head>
+<body>
+  <h3>Focus Mode</h3>
+  <label>
+    <input type="checkbox" id="toggleFocus" />
+    Enable Focus
+  </label>
+
+  <div style="margin-top:10px;">
+    <input type="text" id="siteInput" placeholder="e.g. youtube.com" />
+    <button id="addSite">Add</button>
+  </div>
+
+  <ul id="siteList"></ul>
+
+  <div id="timerSection">
+    <h4>Set Focus Timer (minutes)</h4>
+    <input type="number" id="focusMinutes" min="1" />
+    <button id="startTimer">Start</button>
+    <div id="countdownDisplay"></div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
