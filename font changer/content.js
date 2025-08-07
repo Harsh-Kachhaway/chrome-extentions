@@ -1,20 +1,29 @@
+function applyFontStyles(font, size) {
+  const fontSize = parseInt(size || "16");
+  const lineHeight = Math.round(fontSize * 1.5);
+
+  const tags = [
+    "p", "span", "div", "h1", "h2", "h3", "h4", "h5", "h6",
+    "a", "li", "td", "th", "strong", "em", "b", "i", "button", "label"
+  ];
+
+  tags.forEach(tag => {
+    document.querySelectorAll(tag).forEach(el => {
+      el.style.setProperty("font-family", font, "important");
+      el.style.setProperty("font-size", `${fontSize}px`, "important");
+      el.style.setProperty("line-height", `${lineHeight}px`, "important");
+    });
+  });
+}
+
+// Initial load
 chrome.storage.sync.get(["fontFamily", "fontSize"], (data) => {
-  const font = data.fontFamily || "Arial";
-  const size = data.fontSize || "16";
-  const lineHeight = Math.round(size * 1); // same multiplier as popup
-
-  const style = document.createElement("style");
- style.innerText = `
-  html, body, p, span, div, h1, h2, h3, h4, h5, h6,
-  a, li, td, th, strong, em, b, i, button, label,
-  section *, article *, main *, header *, footer * {
-    font-family: '${font}' !important;
-    font-size: ${size}px !important;
-    line-height: ${lineHeight}px !important;
-  }
-`;
-
-
-  document.head.appendChild(style);
+  applyFontStyles(data.fontFamily || "Arial", data.fontSize || "16");
 });
 
+// Listen for changes from popup
+chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+  if (message.type === "UPDATE_FONT") {
+    applyFontStyles(message.fontFamily, message.fontSize);
+  }
+});
