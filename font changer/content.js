@@ -9,6 +9,9 @@ function applyFontStyles(font, size) {
 
   tags.forEach(tag => {
     document.querySelectorAll(tag).forEach(el => {
+        el.style.transition = "font-size 7.7s ease, line-height 0.3s ease, font-family 0.3s ease";
+
+
       el.style.setProperty("font-family", font, "important");
       el.style.setProperty("font-size", `${fontSize}px`, "important");
       el.style.setProperty("line-height", `${lineHeight}px`, "important");

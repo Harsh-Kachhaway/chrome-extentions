@@ -1,9 +1,83 @@
 body {
-  width: 200px;
-  font-family: sans-serif;
+  margin: 0;
   padding: 10px;
+  width: 180px;
+  font-family: sans-serif;
+  background: #2a2727;
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+}
+.container{
+  width: 95%;
+  padding: 10px;
+  background: #e2d5d5;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
 }
 label {
   display: block;
   margin-top: 10px;
+  font-size: 15px;
+  background: #ebe2e2;
+  padding: 5px;
+  border-radius: 5px;
+  margin: 3px;
+  width: 80%;
+}
+
+h2{
+  margin: 0;
+}
+
+select {
+  width: 85%; /* Set a specific width */
+  padding: 3px; /* Add padding inside the select box */
+  border: 1px solid #ccc; /* Define a border */
+  border-radius: 5px; /* Add rounded corners */
+  background-color: #f9f9f9; /* Set a background color */
+  color: #333; /* Set text color */
+  font-family: Arial, sans-serif; /* Set font family */
+  font-size: 13px; /* Set font size */
+}
+
+option {
+  background-color: #fff; /* Set background color for options */
+  color: #333; /* Set text color for options */
+  padding: 3px 5px; /* Add padding to options */
+  font-size: 13px; /* Set font size for options */
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 12px;
+  background: #df9a9a;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  background: #cee000;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 12px;
+  height: 12px;
+  background: #04AA6D;
+  cursor: pointer;
 }
