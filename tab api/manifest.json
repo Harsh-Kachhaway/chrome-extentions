@@ -1,0 +1,12 @@
+{
+  "manifest_version": 3,
+  "name": "Mini Tab Manager",
+  "version": "1.0",
+  "permissions": ["tabs", "scripting"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  }
+}

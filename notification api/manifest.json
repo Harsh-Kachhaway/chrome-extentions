@@ -1,0 +1,12 @@
+{
+  "manifest_version": 3,
+  "name": "Notifications ",
+  "version": "1.0",
+  "permissions": ["notifications"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "manifest_version": 3,
+  "name": "mute Changer",
+  "version": "1.0",
+  "description": "mutes unwanted website",
+  "permissions": ["storage", "activeTab", "scripting","tabs"],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  }
+}
