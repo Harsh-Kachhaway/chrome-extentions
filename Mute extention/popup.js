@@ -4,7 +4,15 @@ document.addEventListener("DOMContentLoaded", async () => {
   let searchBar = document.querySelector(".searchBar");
   let tabs = await chrome.tabs.query({});
   let ison = true;
-  // console.log(tabs);
+  let mute = [];
+  let unmute = [];
+
+  // mute storage
+  chrome.storage.local.get(null, (items) => {
+    mute = items.muteID;
+    unmute = items.unmuteID;
+    console.log(items);
+  });
 
   //on off button
   let toogle = document.querySelector(".toogle");
@@ -42,13 +50,36 @@ document.addEventListener("DOMContentLoaded", async () => {
     //quick access
     let acc = document.createElement("button");
     acc.innerHTML = `<img src="${icon}" alt=""> `;
+    // chear mute working //mute to zero
+    document.querySelector(".override").addEventListener("click", () => {
+      chrome.tabs.update(tab.id, { muted: false });
+      mute = [];
+      unmute = [];
+      chrome.storage.local.set({ muteID: mute });
+      chrome.storage.local.set({ unmuteID: unmute });
+      acc.classList.remove("active");
+    });
 
+    //check for mute
+    tab.mutedInfo.muted
+      ? acc.classList.add("active")
+      : acc.classList.remove("active");
     // mute using right
     acc.addEventListener("click", () => {
       let isMuted = tab.mutedInfo.muted;
       chrome.tabs.update(tab.id, { muted: !isMuted });
       tab.mutedInfo.muted = !isMuted; // keep local state in sync
-      isMuted ? acc.classList.remove("active") : acc.classList.add("active");
+      if (isMuted) {
+        acc.classList.remove("active");
+        mute = mute.filter((id) => id !== tab.id); // remove it
+        unmute.push(tab.id); // add this tab to unmute list
+      } else {
+        acc.classList.add("active");
+        mute.push(tab.id); // add this tab to mute list
+        unmute = unmute.filter((id) => id !== tab.id); // remove it
+      }
+      chrome.storage.local.set({ muteID: mute });
+      chrome.storage.local.set({ unmuteID: unmute });
     });
 
     // remove using right click
@@ -69,6 +100,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       urlLow.includes(searchBar.value.toLowerCase())
         ? (cont.style.display = "")
         : (cont.style.display = "none");
+      console.log(tab);
     });
 
     //tab list
@@ -105,6 +137,9 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     // speaker svg on click to no speaker
     cont.addEventListener("click", (e) => {
+      console.log("clicked");
+      mute.push(tab.id);
+      chrome.storage.local.set({muteID: mute });
       if (e.target.classList.contains("mute")) {
         // chrome.tabs.remove(tab.id);
         let isMuted = tab.mutedInfo.muted;
@@ -131,6 +166,5 @@ document.addEventListener("DOMContentLoaded", async () => {
 async function tabCount() {
   let numtab = await chrome.tabs.query({});
   let tabNum = document.querySelector(".num-tabs");
-  console.log(numtab);
   tabNum.innerHTML = numtab.length;
 }

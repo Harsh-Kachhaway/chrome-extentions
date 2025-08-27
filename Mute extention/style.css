@@ -55,8 +55,11 @@ body {
   justify-content: center;
 }
 
-.toogle {
+.toogle , .override {
   border: 1px solid #e2d9d9 !important;
+}
+.override:active{
+  background: #cbcbd1;
 }
 
 .active {
