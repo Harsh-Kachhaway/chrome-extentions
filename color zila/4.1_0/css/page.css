@@ -1,0 +1,156 @@
+/* body,html{height:100%}body{font-family:Roboto,system-ui,arial,helvetica,sans-serif;font-size:14px;margin:25px}body{background:#fff}h1{font-size:20px;margin:10px 0 10px 0;font-weight:400}body.page-body{display:flex;justify-content:center;height:auto}.body-container{min-width:500px;margin-bottom:20px}.logo{margin:20px auto;padding:20px 0 0 0}.logo img{width:220px}.page{border:1px solid #ddd;border-radius:2px;margin:10px auto;box-shadow:0 0 8px 2px rgba(0,0,0,.1)}.panel{background:#fff;padding:20px;color:#202020}.panel.heading{padding:10px 20px;margin-bottom:0;border-bottom:1px solid #ddd}.panel.content{margin-top:0}.options-panel{line-height:2em}.options-panel td,.options-panel th{vertical-align:top;white-space:nowrap}.options-panel th{text-align:right;width:1%;padding:8px 15px 10px 10px;font-weight:400}.options-panel td{width:99%;padding:10px}.options-panel label.secondary{color:#606060}.options-panel label.indent,.options-panel label.secondary{margin-left:24px}.options-panel #cz-keyboard-shortcuts-char{margin:0;height:24px}.options-panel #cz-keyboard-shortcut-modifier-label{display:inline-block;height:22px;line-height:22px;margin-left:12px;border:1px solid #d8d8d8;background:#fafafa;padding:0 4px}.options-panel .disabled{color:#999}#footer{margin:10px 15px}#save-button{display:inline-block;background-color:#fff;padding:8px 16px;color:#000;text-align:center;border:1px solid #ccc;border-radius:2px;font-size:14px}#save-button:hover{background-color:#f6f6f6}#status{margin-left:5px;color:#02893d;font-weight:700}#about-panel{line-height:1.5em}#about-panel h2{font-size:15px;padding:0;margin:0;margin:18px 0 3px 0;font-weight:400}#about-panel h2.first{margin-top:0}#about-panel about-content{color:#555} */
+/* Modern Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body.page-body {
+  font-family: "Inter", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: #f5f7fa;
+  color: #2c3e50;
+  line-height: 1.6;
+  display: flex;
+  justify-content: center;
+  padding: 40px;
+}
+
+/* Container */
+.body-container {
+  width: 900px;
+  max-width: 95%;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  padding: 32px;
+}
+
+/* Logo */
+.logo {
+  text-align: center;
+  margin-bottom: 24px;
+}
+.logo img {
+  max-width: 220px;
+}
+
+/* Heading Panel */
+.panel.heading {
+  text-align: center;
+  margin-bottom: 24px;
+}
+.panel.heading h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #273c75;
+}
+
+/* Content Panel */
+.options-panel {
+  padding: 24px;
+  background: #f9fafc;
+  border-radius: 12px;
+  border: 1px solid #e1e5eb;
+}
+
+/* Table Layout */
+.options-panel table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 20px;
+}
+
+.options-panel th {
+  text-align: left;
+  vertical-align: top;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #34495e;
+  padding-right: 20px;
+  min-width: 160px;
+}
+
+.options-panel td {
+  font-size: 0.95rem;
+  color: #2c3e50;
+}
+
+/* Checkbox & Labels */
+input[type="checkbox"] {
+  accent-color: #273c75;
+  margin-right: 8px;
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+label {
+  cursor: pointer;
+  display: inline-block;
+  margin-bottom: 8px;
+}
+
+.secondary {
+  font-size: 0.85rem;
+  color: #7f8c8d;
+}
+
+/* Indented labels */
+.indent {
+  display: block;
+  margin-top: 10px;
+  font-weight: 500;
+}
+
+/* Select dropdowns */
+select {
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid #dcdfe6;
+  background: #fff;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+select:hover {
+  border-color: #a4b0be;
+}
+
+select:focus {
+  outline: none;
+  border-color: #273c75;
+  box-shadow: 0 0 0 3px rgba(39, 60, 117, 0.15);
+}
+
+/* Footer */
+#footer {
+  margin-top: 30px;
+  text-align: center;
+}
+
+#save-button {
+  background: #273c75;
+  color: #fff;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#save-button:hover {
+  background: #40739e;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(39, 60, 117, 0.2);
+}
+
+#status {
+  display: block;
+  margin-top: 12px;
+  font-size: 0.9rem;
+  color: #718093;
+}

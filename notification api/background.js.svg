@@ -1,0 +1,1473 @@
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+                width="717" height="3531" shape-rendering="optimizeSpeed">
+                
+                <g>
+                   <rect x="50" y="65"
+            width="349.8" height="30"
+            rx="2" ry="2"
+            style="fill:#C5E1A5; stroke:#444; stroke-width:1" />
+                   <title>chrome.runtime.onMessage.addListener(*())</title>
+            <text x="65" y="85"
+                font-family="monospace" font-size="13" fill="#222">
+                <tspan x="65" y="85">chrome.runtime.onMessage.addListener(*())</tspan>
+            </text>
+                   
+                   
+                </g>
+            <g>
+                <rect x="87" y="113.5"
+            width="284" height="30"
+            style="fill:#a5d6a7; stroke:#444; stroke-width:1" />
+                    
+                <line x1="97" y1="113.5" x2="97" y2="143.5"
+                style="fill:#a5d6a7; stroke:#444; stroke-width:1" />
+                <line x1="361" y1="113.5" x2="361" y2="143.5"
+                style="fill:#a5d6a7; stroke:#444; stroke-width:1" />
+             
+                <title>(msg, sender, sendResponse) =&gt;</title>
+            <text x="112" y="133.5"
+                font-family="monospace" font-size="13" fill="#222">
+                <tspan x="112" y="133.5">(msg, sender, sendResponse) =&gt;</tspan>
+            </text>
+                
+            </g><g>
+            <rect x="154" y="177"
+            width="255" height="30"
+            rx="3" ry="3"
+            style="fill:#ce93d8; stroke:#444; stroke-width:1" />                
+            <polygon points="124,192 154,162 184,192 154,222"
+            style="fill:#ce93d8; stroke:#444; stroke-width:1" />
+            <title>(msg.action === &quot;notify&quot;)</title>
+            <text x="199" y="197"
+                font-family="monospace" font-size="13" fill="#222">
+                <tspan x="199" y="197">(msg.action === &quot;notify&quot;)</tspan>
+            </text>
+            
+            <text x="146.2" y="197"
+        font-family="monospace" font-size="13" fill="#222">if</text> <text x="161.8" y="223.95"
+        font-family="monospace" font-size="13" fill="#222">+</text> 
+        </g>
+                <g>
+                   <rect x="174" y="232"
+            width="388.8" height="30"
+            rx="2" ry="2"
+            style="fill:#C5E1A5; stroke:#444; stroke-width:1" />
+                   <title>chrome.notifications.create(&apos;helloNotif&apos;, {*})</title>
+            <text x="189" y="252"
+                font-family="monospace" font-size="13" fill="#222">
+                <tspan x="189" y="252">chrome.notifications.create(&apos;helloNotif&apos;, {*})</tspan>
+            </text>
+                   
+                   
+                </g>
+                <g>
+                   <rect x="211" y="280.5"
+            width="53.4" height="30"
+            rx="3" ry="3"
+            style="fill:#90caf9; stroke:#444; stroke-width:1" />
+                   <title>{*}</title>
+            <text x="226" y="300.5"
+                font-family="monospace" font-size="13" fill="#222">
+                <tspan x="226" y="300.5">{*}</tspan>
+            </text>
+                   
+                   
+                </g>
+                <g>
+                   <rect x="248" y="329"
+            width="131.39999999999998" height="30"
+            rx="2" ry="2"
+            style="fill:#90caf9; stroke:#444; stroke-width:1" />
+                   <title>type: &quot;basic&quot;</title>
+            <text x="263" y="349"
+                font-family="monospace" font-size="13" fill="#222">
+                <tspan x="263" y="349">type: &quot;basic&quot;</tspan>
+            </text>
+                   
+                   
+                </g>
+                <g>
+                   <rect x="248" y="377.5"
+            width="201.6" height="30"
+            rx="2" ry="2"
+            style="fill:#90caf9; stroke:#444; stroke-width:1" />
+                   <title>iconUrl: &quot;icon128.png&quot;</title>
+            <text x="263" y="397.5"
+                font-family="monospace" font-size="13" fill="#222">
+                <tspan x="263" y="397.5">iconUrl: &quot;icon128.png&quot;</tspan>
+            </text>
+                   
+                   
+                </g>
+                <g>
+                   <rect x="248" y="426"
+            width="435.59999999999997" height="30"
+            rx="2" ry="2"
+            style="fill:#90caf9; stroke:#444; stroke-width:1" />
+                   <title>// must be a 48x48 or 128x128 png
+title: &quot;Greetings!&quot;</title>
+            <text x="263" y="446"
+                font-family="monospace" font-size="13" fill="#222">
+                <tspan x="263" y="446">// must be a 48x48 or 128x128 png
+title: &quot;Greeting...</tspan>
+            </text>
+                   
+                   
+                </g>
+                <g>
+                   <rect x="248" y="474.5"
+            width="443.4" height="30"
+            rx="2" ry="2"
+            style="fill:#90caf9; stroke:#444; stroke-width:1" />
+                   <title>message: &quot;This is your first Chrome notification 🎉&quot;</title>
+            <text x="263" y="494.5"
+                font-family="monospace" font-size="13" fill="#222">
+                <tspan x="263" y="494.5">message: &quot;This is your first Chrome notification �...</tspan>
+            </text>
+                   
+                   
+                </g>
+                <g>
+                   <rect x="50" y="524.5"
+            width="396.59999999999997" height="30"
+            rx="2" ry="2"
+            style="fill:#C5E1A5; stroke:#444; stroke-width:1" />
+                   <title>chrome.notifications.onClicked.addListener(*())</title>
+            <text x="65" y="544.5"
+                font-family="monospace" font-size="13" fill="#222">
+                <tspan x="65" y="544.5">chrome.notifications.onClicked.addListener(*())</tspan>
+            </text>
+                   
+                   
+                </g>
+            <g>
+                <rect x="87" y="573"
+            width="143.6" height="30"
+            style="fill:#a5d6a7; stroke:#444; stroke-width:1" />
+                    
+                <line x1="97" y1="573" x2="97" y2="603"
+                style="fill:#a5d6a7; stroke:#444; stroke-width:1" />
+                <line x1="220.6" y1="573" x2="220.6" y2="603"
+                style="fill:#a5d6a7; stroke:#444; stroke-width:1" />
+             
+                <title>(notifId) =&gt;</title>
+            <text x="112" y="593"
+                font-family="monospace" font-size="13" fill="#222">
+                <tspan x="112" y="593">(notifId) =&gt;</tspan>
+            </text>
+                
+            </g><g>
+            <rect x="154" y="636.5"
+            width="262.79999999999995" height="30"
+            rx="3" ry="3"
+            style="fill:#ce93d8; stroke:#444; stroke-width:1" />                
+            <polygon points="124,651.5 154,621.5 184,651.5 154,681.5"
+            style="fill:#ce93d8; stroke:#444; stroke-width:1" />
+            <title>(notifId === &quot;helloNotif&quot;)</title>
+            <text x="199" y="656.5"
+                font-family="monospace" font-size="13" fill="#222">
+                <tspan x="199" y="656.5">(notifId === &quot;helloNotif&quot;)</tspan>
+            </text>
+            
+            <text x="146.2" y="656.5"
+        font-family="monospace" font-size="13" fill="#222">if</text> <text x="161.8" y="683.45"
+        font-family="monospace" font-size="13" fill="#222">+</text> 
+        </g>
+                <g>
+                   <rect x="174" y="691.5"
+            width="209.4" height="30"
+            rx="2" ry="2"
+            style="fill:#C5E1A5; stroke:#444; stroke-width:1" />
+                   <title>chrome.tabs.create({*})</title>
+            <text x="189" y="711.5"
+                font-family="monospace" font-size="13" fill="#222">
+                <tspan x="189" y="711.5">chrome.tabs.create({*})</tspan>
+            </text>
+                   
+                   
+                </g>
+                <g>
+                   <rect x="211" y="740"
+            width="53.4" height="30"
+            rx="3" ry="3"
+            style="fill:#90caf9; stroke:#444; stroke-width:1" />
+                   <title>{*}</title>
+            <text x="226" y="760"
+                font-family="monospace" font-size="13" fill="#222">
+                <tspan x="226" y="760">{*}</tspan>
+            </text>
+                   
+                   
+                </g>
+                <g>
+                   <rect x="248" y="788.5"
+            width="225" height="30"
+            rx="2" ry="2"
+            style="fill:#90caf9; stroke:#444; stroke-width:1" />
+                   <title>url: &quot;https://google.com&quot;</title>
+            <text x="263" y="808.5"
+                font-family="monospace" font-size="13" fill="#222">
+                <tspan x="263" y="808.5">url: &quot;https://google.com&quot;</tspan>
+            </text>
+                   
+                   
+                </g>
+                <g>
+                   <rect x="50" y="838.5"
+            width="349.8" height="30"
+            rx="2" ry="2"
+            style="fill:#C5E1A5; stroke:#444; stroke-width:1" />
+                   <title>chrome.runtime.onMessage.addListener(*())</title>
+            <text x="65" y="858.5"
+                font-family="monospace" font-size="13" fill="#222">
+                <tspan x="65" y="858.5">chrome.runtime.onMessage.addListener(*())</tspan>
+            </text>
+                   
+                   
+                </g>
+            <g>
+                <rect x="87" y="887"
+            width="112.4" height="30"
+            style="fill:#a5d6a7; stroke:#444; stroke-width:1" />
+                    
+                <line x1="97" y1="887" x2="97" y2="917"
+                style="fill:#a5d6a7; stroke:#444; stroke-width:1" />
+                <line x1="189.4" y1="887" x2="189.4" y2="917"
+                style="fill:#a5d6a7; stroke:#444; stroke-width:1" />
+             
+                <title>(msg) =&gt;</title>
+            <text x="112" y="907"
+                font-family="monospace" font-size="13" fill="#222">
+                <tspan x="112" y="907">(msg) =&gt;</tspan>
+            </text>
+                
+            </g><g>
+            <rect x="154" y="950.5"
+            width="247.2" height="30"
+            rx="3" ry="3"
+            style="fill:#ce93d8; stroke:#444; stroke-width:1" />                
+            <polygon points="124,965.5 154,935.5 184,965.5 154,995.5"
+            style="fill:#ce93d8; stroke:#444; stroke-width:1" />
+            <title>(msg.action === &quot;basic&quot;)</title>
+            <text x="199" y="970.5"
+                font-family="monospace" font-size="13" fill="#222">
+                <tspan x="199" y="970.5">(msg.action === &quot;basic&quot;)</tspan>
+            </text>
+            
+            <text x="146.2" y="970.5"
+        font-family="monospace" font-size="13" fill="#222">if</text> <text x="161.8" y="997.45"
+        font-family="monospace" font-size="13" fill="#222">+</text> 
+        </g>
+                <g>
+                   <rect x="174" y="1005.5"
+            width="248.4" height="30"
+            rx="2" ry="2"
+            style="fill:#C5E1A5; stroke:#444; stroke-width:1" />
+                   <title>console.log(&apos;working basic&apos;)</title>
+            <text x="189" y="1025.5"
+                font-family="monospace" font-size="13" fill="#222">
+                <tspan x="189" y="1025.5">console.log(&apos;working basic&apos;)</tspan>
+            </text>
+                   
+                   
+                </g>
+                <g>
+                   <rect x="174" y="1054"
+            width="373.2" height="30"
+            rx="2" ry="2"
+            style="fill:#C5E1A5; stroke:#444; stroke-width:1" />
+                   <title>chrome.notifications.create(&apos;basictif&apos;, {*})</title>
+            <text x="189" y="1074"
+                font-family="monospace" font-size="13" fill="#222">
+                <tspan x="189" y="1074">chrome.notifications.create(&apos;basictif&apos;, {*})</tspan>
+            </text>
+                   
+                   
+                </g>
+                <g>
+                   <rect x="211" y="1102.5"
+            width="53.4" height="30"
+            rx="3" ry="3"
+            style="fill:#90caf9; stroke:#444; stroke-width:1" />
+                   <title>{*}</title>
+            <text x="226" y="1122.5"
+                font-family="monospace" font-size="13" fill="#222">
+                <tspan x="226" y="1122.5">{*}</tspan>
+            </text>
+                   
+                   
+                </g>
+                <g>
+                   <rect x="248" y="1151"
+            width="131.39999999999998" height="30"
+            rx="2" ry="2"
+            style="fill:#90caf9; stroke:#444; stroke-width:1" />
+                   <title>type: &quot;basic&quot;</title>
+            <text x="263" y="1171"
+                font-family="monospace" font-size="13" fill="#222">
+                <tspan x="263" y="1171">type: &quot;basic&quot;</tspan>
+            </text>
+                   
+                   
+                </g>
+                <g>
+                   <rect x="248" y="1199.5"
+            width="201.6" height="30"
+            rx="2" ry="2"
+            style="fill:#90caf9; stroke:#444; stroke-width:1" />
+                   <title>iconUrl: &quot;icon128.png&quot;</title>
+            <text x="263" y="1219.5"
+                font-family="monospace" font-size="13" fill="#222">
+                <tspan x="263" y="1219.5">iconUrl: &quot;icon128.png&quot;</tspan>
+            </text>
+                   
+                   
+                </g>
+                <g>
+                   <rect x="248" y="1248"
+            width="240.6" height="30"
+            rx="2" ry="2"
+            style="fill:#90caf9; stroke:#444; stroke-width:1" />
+                   <title>title: &quot;Basic Notification&quot;</title>
+            <text x="263" y="1268"
+                font-family="monospace" font-size="13" fill="#222">
+                <tspan x="263" y="1268">title: &quot;Basic Notification&quot;</tspan>
+            </text>
+                   
+                   
+                </g>
+                <g>
+                   <rect x="248" y="1296.5"
+            width="365.4" height="30"
+            rx="2" ry="2"
+            style="fill:#90caf9; stroke:#444; stroke-width:1" />
+                   <title>message: &quot;This is a simple notification 🎉&quot;</title>
+            <text x="263" y="1316.5"
+                font-family="monospace" font-size="13" fill="#222">
+                <tspan x="263" y="1316.5">message: &quot;This is a simple notification 🎉&quot;</tspan>
+            </text>
+                   
+                   
+                </g><g>
+            <rect x="154" y="1361.5"
+            width="247.2" height="30"
+            rx="3" ry="3"
+            style="fill:#ce93d8; stroke:#444; stroke-width:1" />                
+            <polygon points="124,1376.5 154,1346.5 184,1376.5 154,1406.5"
+            style="fill:#ce93d8; stroke:#444; stroke-width:1" />
+            <title>(msg.action === &quot;image&quot;)</title>
+            <text x="199" y="1381.5"
+                font-family="monospace" font-size="13" fill="#222">
+                <tspan x="199" y="1381.5">(msg.action === &quot;image&quot;)</tspan>
+            </text>
+            
+            <text x="146.2" y="1381.5"
+        font-family="monospace" font-size="13" fill="#222">if</text> <text x="161.8" y="1408.45"
+        font-family="monospace" font-size="13" fill="#222">+</text> 
+        </g>
+                <g>
+                   <rect x="174" y="1416.5"
+            width="388.8" height="30"
+            rx="2" ry="2"
+            style="fill:#C5E1A5; stroke:#444; stroke-width:1" />
+                   <title>chrome.notifications.create(&apos;imageNotif&apos;, {*})</title>
+            <text x="189" y="1436.5"
+                font-family="monospace" font-size="13" fill="#222">
+                <tspan x="189" y="1436.5">chrome.notifications.create(&apos;imageNotif&apos;, {*})</tspan>
+            </text>
+                   
+                   
+                </g>
+                <g>
+                   <rect x="211" y="1465"
+            width="53.4" height="30"
+            rx="3" ry="3"
+            style="fill:#90caf9; stroke:#444; stroke-width:1" />
+                   <title>{*}</title>
+            <text x="226" y="1485"
+                font-family="monospace" font-size="13" fill="#222">
+                <tspan x="226" y="1485">{*}</tspan>
+            </text>
+                   
+                   
+                </g>
+                <g>
+                   <rect x="248" y="1513.5"
+            width="131.39999999999998" height="30"
+            rx="2" ry="2"
+            style="fill:#90caf9; stroke:#444; stroke-width:1" />
+                   <title>type: &quot;image&quot;</title>
+            <text x="263" y="1533.5"
+                font-family="monospace" font-size="13" fill="#222">
+                <tspan x="263" y="1533.5">type: &quot;image&quot;</tspan>
+            </text>
+                   
+                   
+                </g>
+                <g>
+                   <rect x="248" y="1562"
+            width="201.6" height="30"
+            rx="2" ry="2"
+            style="fill:#90caf9; stroke:#444; stroke-width:1" />
+                   <title>iconUrl: &quot;icon128.png&quot;</title>
+            <text x="263" y="1582"
+                font-family="monospace" font-size="13" fill="#222">
+                <tspan x="263" y="1582">iconUrl: &quot;icon128.png&quot;</tspan>
+            </text>
+                   
+                   
+                </g>
+                <g>
+                   <rect x="248" y="1610.5"
+            width="240.6" height="30"
+            rx="2" ry="2"
+            style="fill:#90caf9; stroke:#444; stroke-width:1" />
+                   <title>title: &quot;Image Notification&quot;</title>
+            <text x="263" y="1630.5"
+                font-family="monospace" font-size="13" fill="#222">
+                <tspan x="263" y="1630.5">title: &quot;Image Notification&quot;</tspan>
+            </text>
+                   
+                   
+                </g>
+                <g>
+                   <rect x="248" y="1659"
+            width="303" height="30"
+            rx="2" ry="2"
+            style="fill:#90caf9; stroke:#444; stroke-width:1" />
+                   <title>message: &quot;Here’s a cool picture 📷&quot;</title>
+            <text x="263" y="1679"
+                font-family="monospace" font-size="13" fill="#222">
+                <tspan x="263" y="1679">message: &quot;Here’s a cool picture 📷&quot;</tspan>
+            </text>
+                   
+                   
+                </g>
+                <g>
+                   <rect x="248" y="1707.5"
+            width="201.6" height="30"
+            rx="2" ry="2"
+            style="fill:#90caf9; stroke:#444; stroke-width:1" />
+                   <title>imageUrl: &quot;banner.png&quot;</title>
+            <text x="263" y="1727.5"
+                font-family="monospace" font-size="13" fill="#222">
+                <tspan x="263" y="1727.5">imageUrl: &quot;banner.png&quot;</tspan>
+            </text>
+                   
+                   
+                </g><g>
+            <rect x="154" y="1772.5"
+            width="239.39999999999998" height="30"
+            rx="3" ry="3"
+            style="fill:#ce93d8; stroke:#444; stroke-width:1" />                
+            <polygon points="124,1787.5 154,1757.5 184,1787.5 154,1817.5"
+            style="fill:#ce93d8; stroke:#444; stroke-width:1" />
+            <title>(msg.action === &quot;list&quot;)</title>
+            <text x="199" y="1792.5"
+                font-family="monospace" font-size="13" fill="#222">
+                <tspan x="199" y="1792.5">(msg.action === &quot;list&quot;)</tspan>
+            </text>
+            
+            <text x="146.2" y="1792.5"
+        font-family="monospace" font-size="13" fill="#222">if</text> <text x="161.8" y="1819.45"
+        font-family="monospace" font-size="13" fill="#222">+</text> 
+        </g>
+                <g>
+                   <rect x="174" y="1827.5"
+            width="381" height="30"
+            rx="2" ry="2"
+            style="fill:#C5E1A5; stroke:#444; stroke-width:1" />
+                   <title>chrome.notifications.create(&apos;listNotif&apos;, {*})</title>
+            <text x="189" y="1847.5"
+                font-family="monospace" font-size="13" fill="#222">
+                <tspan x="189" y="1847.5">chrome.notifications.create(&apos;listNotif&apos;, {*})</tspan>
+            </text>
+                   
+                   
+                </g>
+                <g>
+                   <rect x="211" y="1876"
+            width="53.4" height="30"
+            rx="3" ry="3"
+            style="fill:#90caf9; stroke:#444; stroke-width:1" />
+                   <title>{*}</title>
+            <text x="226" y="1896"
+                font-family="monospace" font-size="13" fill="#222">
+                <tspan x="226" y="1896">{*}</tspan>
+            </text>
+                   
+                   
+                </g>
+                <g>
+                   <rect x="248" y="1924.5"
+            width="123.6" height="30"
+            rx="2" ry="2"
+            style="fill:#90caf9; stroke:#444; stroke-width:1" />
+                   <title>type: &quot;list&quot;</title>
+            <text x="263" y="1944.5"
+                font-family="monospace" font-size="13" fill="#222">
+                <tspan x="263" y="1944.5">type: &quot;list&quot;</tspan>
+            </text>
+                   
+                   
+                </g>
+                <g>
+                   <rect x="248" y="1973"
+            width="201.6" height="30"
+            rx="2" ry="2"
+            style="fill:#90caf9; stroke:#444; stroke-width:1" />
+                   <title>iconUrl: &quot;icon128.png&quot;</title>
+            <text x="263" y="1993"
+                font-family="monospace" font-size="13" fill="#222">
+                <tspan x="263" y="1993">iconUrl: &quot;icon128.png&quot;</tspan>
+            </text>
+                   
+                   
+                </g>
+                <g>
+                   <rect x="248" y="2021.5"
+            width="217.2" height="30"
+            rx="2" ry="2"
+            style="fill:#90caf9; stroke:#444; stroke-width:1" />
+                   <title>title: &quot;Your To-Do List&quot;</title>
+            <text x="263" y="2041.5"
+                font-family="monospace" font-size="13" fill="#222">
+                <tspan x="263" y="2041.5">title: &quot;Your To-Do List&quot;</tspan>
+            </text>
+                   
+                   
+                </g>
+                <g>
+                   <rect x="248" y="2070"
+            width="287.4" height="30"
+            rx="2" ry="2"
+            style="fill:#90caf9; stroke:#444; stroke-width:1" />
+                   <title>message: &quot;Things you need to do:&quot;</title>
+            <text x="263" y="2090"
+                font-family="monospace" font-size="13" fill="#222">
+                <tspan x="263" y="2090">message: &quot;Things you need to do:&quot;</tspan>
+            </text>
+                   
+                   
+                </g>
+                <g>
+                   <rect x="248" y="2118.5"
+            width="435.59999999999997" height="30"
+            rx="2" ry="2"
+            style="fill:#90caf9; stroke:#444; stroke-width:1" />
+                   <title>items: [{
+  title: &quot;✅ Task 1&quot;,
+  message: &quot;Finish Chrome extension&quot;
+}, {
+  title: &quot;✅ Task 2&quot;,
+  message: &quot;Commit code to GitHub&quot;
+}, {
+  title: &quot;✅ Task 3&quot;,
+  message: &quot;Go for a walk&quot;
+}]</title>
+            <text x="263" y="2138.5"
+                font-family="monospace" font-size="13" fill="#222">
+                <tspan x="263" y="2138.5">items: [{
+  title: &quot;✅ Task 1&quot;,
+  message: &quot;Finish ...</tspan>
+            </text>
+                   
+                   
+                </g>
+                <g>
+                   <rect x="285" y="2167"
+            width="53.4" height="30"
+            rx="3" ry="3"
+            style="fill:#90caf9; stroke:#444; stroke-width:1" />
+                   <title>{*}</title>
+            <text x="300" y="2187"
+                font-family="monospace" font-size="13" fill="#222">
+                <tspan x="300" y="2187">{*}</tspan>
+            </text>
+                   
+                   
+                </g>
+                <g>
+                   <rect x="322" y="2215.5"
+            width="170.4" height="30"
+            rx="2" ry="2"
+            style="fill:#90caf9; stroke:#444; stroke-width:1" />
+                   <title>title: &quot;✅ Task 1&quot;</title>
+            <text x="337" y="2235.5"
+                font-family="monospace" font-size="13" fill="#222">
+                <tspan x="337" y="2235.5">title: &quot;✅ Task 1&quot;</tspan>
+            </text>
+                   
+                   
+                </g>
+                <g>
+                   <rect x="322" y="2264"
+            width="295.2" height="30"
+            rx="2" ry="2"
+            style="fill:#90caf9; stroke:#444; stroke-width:1" />
+                   <title>message: &quot;Finish Chrome extension&quot;</title>
+            <text x="337" y="2284"
+                font-family="monospace" font-size="13" fill="#222">
+                <tspan x="337" y="2284">message: &quot;Finish Chrome extension&quot;</tspan>
+            </text>
+                   
+                   
+                </g>
+                <g>
+                   <rect x="285" y="2312.5"
+            width="53.4" height="30"
+            rx="3" ry="3"
+            style="fill:#90caf9; stroke:#444; stroke-width:1" />
+                   <title>{*}</title>
+            <text x="300" y="2332.5"
+                font-family="monospace" font-size="13" fill="#222">
+                <tspan x="300" y="2332.5">{*}</tspan>
+            </text>
+                   
+                   
+                </g>
+                <g>
+                   <rect x="322" y="2361"
+            width="170.4" height="30"
+            rx="2" ry="2"
+            style="fill:#90caf9; stroke:#444; stroke-width:1" />
+                   <title>title: &quot;✅ Task 2&quot;</title>
+            <text x="337" y="2381"
+                font-family="monospace" font-size="13" fill="#222">
+                <tspan x="337" y="2381">title: &quot;✅ Task 2&quot;</tspan>
+            </text>
+                   
+                   
+                </g>
+                <g>
+                   <rect x="322" y="2409.5"
+            width="279.6" height="30"
+            rx="2" ry="2"
+            style="fill:#90caf9; stroke:#444; stroke-width:1" />
+                   <title>message: &quot;Commit code to GitHub&quot;</title>
+            <text x="337" y="2429.5"
+                font-family="monospace" font-size="13" fill="#222">
+                <tspan x="337" y="2429.5">message: &quot;Commit code to GitHub&quot;</tspan>
+            </text>
+                   
+                   
+                </g>
+                <g>
+                   <rect x="285" y="2458"
+            width="53.4" height="30"
+            rx="3" ry="3"
+            style="fill:#90caf9; stroke:#444; stroke-width:1" />
+                   <title>{*}</title>
+            <text x="300" y="2478"
+                font-family="monospace" font-size="13" fill="#222">
+                <tspan x="300" y="2478">{*}</tspan>
+            </text>
+                   
+                   
+                </g>
+                <g>
+                   <rect x="322" y="2506.5"
+            width="170.4" height="30"
+            rx="2" ry="2"
+            style="fill:#90caf9; stroke:#444; stroke-width:1" />
+                   <title>title: &quot;✅ Task 3&quot;</title>
+            <text x="337" y="2526.5"
+                font-family="monospace" font-size="13" fill="#222">
+                <tspan x="337" y="2526.5">title: &quot;✅ Task 3&quot;</tspan>
+            </text>
+                   
+                   
+                </g>
+                <g>
+                   <rect x="322" y="2555"
+            width="217.2" height="30"
+            rx="2" ry="2"
+            style="fill:#90caf9; stroke:#444; stroke-width:1" />
+                   <title>message: &quot;Go for a walk&quot;</title>
+            <text x="337" y="2575"
+                font-family="monospace" font-size="13" fill="#222">
+                <tspan x="337" y="2575">message: &quot;Go for a walk&quot;</tspan>
+            </text>
+                   
+                   
+                </g><g>
+            <rect x="154" y="2620"
+            width="270.6" height="30"
+            rx="3" ry="3"
+            style="fill:#ce93d8; stroke:#444; stroke-width:1" />                
+            <polygon points="124,2635 154,2605 184,2635 154,2665"
+            style="fill:#ce93d8; stroke:#444; stroke-width:1" />
+            <title>(msg.action === &quot;progress&quot;)</title>
+            <text x="199" y="2640"
+                font-family="monospace" font-size="13" fill="#222">
+                <tspan x="199" y="2640">(msg.action === &quot;progress&quot;)</tspan>
+            </text>
+            
+            <text x="146.2" y="2640"
+        font-family="monospace" font-size="13" fill="#222">if</text> <text x="161.8" y="2666.95"
+        font-family="monospace" font-size="13" fill="#222">+</text> 
+        </g>
+                <g>
+                   <rect x="174" y="2675"
+            width="154.8" height="30"
+            rx="3" ry="3"
+            style="fill:#90caf9; stroke:#444; stroke-width:1" />
+                   <title>let progress = 0</title>
+            <text x="189" y="2695"
+                font-family="monospace" font-size="13" fill="#222">
+                <tspan x="189" y="2695">let progress = 0</tspan>
+            </text>
+                   
+                   
+                </g>
+                <g>
+                   <rect x="174" y="2723.5"
+            width="310.8" height="30"
+            rx="3" ry="3"
+            style="fill:#90caf9; stroke:#444; stroke-width:1" />
+                   <title>let interval = setInterval(*(), 500)</title>
+            <text x="189" y="2743.5"
+                font-family="monospace" font-size="13" fill="#222">
+                <tspan x="189" y="2743.5">let interval = setInterval(*(), 500)</tspan>
+            </text>
+                   
+                   
+                </g>
+            <g>
+                <rect x="211" y="2772"
+            width="89" height="30"
+            style="fill:#a5d6a7; stroke:#444; stroke-width:1" />
+                    
+                <line x1="221" y1="2772" x2="221" y2="2802"
+                style="fill:#a5d6a7; stroke:#444; stroke-width:1" />
+                <line x1="290" y1="2772" x2="290" y2="2802"
+                style="fill:#a5d6a7; stroke:#444; stroke-width:1" />
+             
+                <title>() =&gt;</title>
+            <text x="236" y="2792"
+                font-family="monospace" font-size="13" fill="#222">
+                <tspan x="236" y="2792">() =&gt;</tspan>
+            </text>
+                
+            </g><g>
+            <rect x="278" y="2835.5"
+            width="184.8" height="30"
+            rx="3" ry="3"
+            style="fill:#ce93d8; stroke:#444; stroke-width:1" />                
+            <polygon points="248,2850.5 278,2820.5 308,2850.5 278,2880.5"
+            style="fill:#ce93d8; stroke:#444; stroke-width:1" />
+            <title>(progress &gt; 100)</title>
+            <text x="323" y="2855.5"
+                font-family="monospace" font-size="13" fill="#222">
+                <tspan x="323" y="2855.5">(progress &gt; 100)</tspan>
+            </text>
+            
+            <text x="270.2" y="2855.5"
+        font-family="monospace" font-size="13" fill="#222">if</text> <text x="285.8" y="2882.45"
+        font-family="monospace" font-size="13" fill="#222">+</text> 
+        </g>
+                <g>
+                   <rect x="298" y="2890.5"
+            width="209.4" height="30"
+            rx="2" ry="2"
+            style="fill:#C5E1A5; stroke:#444; stroke-width:1" />
+                   <title>clearInterval(interval)</title>
+            <text x="313" y="2910.5"
+                font-family="monospace" font-size="13" fill="#222">
+                <tspan x="313" y="2910.5">clearInterval(interval)</tspan>
+            </text>
+                   
+                   
+                </g>
+            <g>
+                <rect x="298" y="2939"
+            width="76.8" height="30"
+            rx="3" ry="3"
+            style="fill:#90caf9; stroke:#444; stroke-width:1" />
+                
+                <line x1="374.8" y1="2949" x2="379.8" y2="2949"
+                style="fill:#a5d6a7; stroke:#444; stroke-width:1" />
+                
+                <line x1="374.8" y1="2959" x2="379.8" y2="2959"
+                style="fill:#a5d6a7; stroke:#444; stroke-width:1" />
+
+                <path d="M379.8, 2943 L395.8, 2954 L379.8, 2965 Z" 
+        fill="#a5d6a7" stroke="#444" stroke-width="1" />
+                             
+                <title>return</title>
+            <text x="313" y="2959"
+                font-family="monospace" font-size="13" fill="#222">
+                <tspan x="313" y="2959">return</tspan>
+            </text>
+                
+            </g>
+                <g>
+                   <rect x="248" y="2989"
+            width="412.2" height="30"
+            rx="2" ry="2"
+            style="fill:#C5E1A5; stroke:#444; stroke-width:1" />
+                   <title>chrome.notifications.create(&apos;progressNotif&apos;, {*})</title>
+            <text x="263" y="3009"
+                font-family="monospace" font-size="13" fill="#222">
+                <tspan x="263" y="3009">chrome.notifications.create(&apos;progressNotif&apos;, {*})</tspan>
+            </text>
+                   
+                   
+                </g>
+                <g>
+                   <rect x="285" y="3037.5"
+            width="53.4" height="30"
+            rx="3" ry="3"
+            style="fill:#90caf9; stroke:#444; stroke-width:1" />
+                   <title>{*}</title>
+            <text x="300" y="3057.5"
+                font-family="monospace" font-size="13" fill="#222">
+                <tspan x="300" y="3057.5">{*}</tspan>
+            </text>
+                   
+                   
+                </g>
+                <g>
+                   <rect x="322" y="3086"
+            width="154.8" height="30"
+            rx="2" ry="2"
+            style="fill:#90caf9; stroke:#444; stroke-width:1" />
+                   <title>type: &quot;progress&quot;</title>
+            <text x="337" y="3106"
+                font-family="monospace" font-size="13" fill="#222">
+                <tspan x="337" y="3106">type: &quot;progress&quot;</tspan>
+            </text>
+                   
+                   
+                </g>
+                <g>
+                   <rect x="322" y="3134.5"
+            width="201.6" height="30"
+            rx="2" ry="2"
+            style="fill:#90caf9; stroke:#444; stroke-width:1" />
+                   <title>iconUrl: &quot;icon128.png&quot;</title>
+            <text x="337" y="3154.5"
+                font-family="monospace" font-size="13" fill="#222">
+                <tspan x="337" y="3154.5">iconUrl: &quot;icon128.png&quot;</tspan>
+            </text>
+                   
+                   
+                </g>
+                <g>
+                   <rect x="322" y="3183"
+            width="209.4" height="30"
+            rx="2" ry="2"
+            style="fill:#90caf9; stroke:#444; stroke-width:1" />
+                   <title>title: &quot;Downloading...&quot;</title>
+            <text x="337" y="3203"
+                font-family="monospace" font-size="13" fill="#222">
+                <tspan x="337" y="3203">title: &quot;Downloading...&quot;</tspan>
+            </text>
+                   
+                   
+                </g>
+                <g>
+                   <rect x="322" y="3231.5"
+            width="349.8" height="30"
+            rx="2" ry="2"
+            style="fill:#90caf9; stroke:#444; stroke-width:1" />
+                   <title>message: &quot;Please wait while we finish ⏳&quot;</title>
+            <text x="337" y="3251.5"
+                font-family="monospace" font-size="13" fill="#222">
+                <tspan x="337" y="3251.5">message: &quot;Please wait while we finish ⏳&quot;</tspan>
+            </text>
+                   
+                   
+                </g>
+                <g>
+                   <rect x="322" y="3280"
+            width="170.4" height="30"
+            rx="2" ry="2"
+            style="fill:#90caf9; stroke:#444; stroke-width:1" />
+                   <title>progress: progress</title>
+            <text x="337" y="3300"
+                font-family="monospace" font-size="13" fill="#222">
+                <tspan x="337" y="3300">progress: progress</tspan>
+            </text>
+                   
+                   
+                </g>
+                <g>
+                   <rect x="248" y="3328.5"
+            width="139.2" height="30"
+            rx="3" ry="3"
+            style="fill:#90caf9; stroke:#444; stroke-width:1" />
+                   <title>progress += 10</title>
+            <text x="263" y="3348.5"
+                font-family="monospace" font-size="13" fill="#222">
+                <tspan x="263" y="3348.5">progress += 10</tspan>
+            </text>
+                   
+                   
+                </g>
+                <g>
+                   <rect x="50" y="3378.5"
+            width="396.59999999999997" height="30"
+            rx="2" ry="2"
+            style="fill:#C5E1A5; stroke:#444; stroke-width:1" />
+                   <title>chrome.notifications.onClicked.addListener(*())</title>
+            <text x="65" y="3398.5"
+                font-family="monospace" font-size="13" fill="#222">
+                <tspan x="65" y="3398.5">chrome.notifications.onClicked.addListener(*())</tspan>
+            </text>
+                   
+                   
+                </g>
+            <g>
+                <rect x="87" y="3427"
+            width="143.6" height="30"
+            style="fill:#a5d6a7; stroke:#444; stroke-width:1" />
+                    
+                <line x1="97" y1="3427" x2="97" y2="3457"
+                style="fill:#a5d6a7; stroke:#444; stroke-width:1" />
+                <line x1="220.6" y1="3427" x2="220.6" y2="3457"
+                style="fill:#a5d6a7; stroke:#444; stroke-width:1" />
+             
+                <title>(notifId) =&gt;</title>
+            <text x="112" y="3447"
+                font-family="monospace" font-size="13" fill="#222">
+                <tspan x="112" y="3447">(notifId) =&gt;</tspan>
+            </text>
+                
+            </g>
+                <g>
+                   <rect x="124" y="3475.5"
+            width="279.6" height="30"
+            rx="2" ry="2"
+            style="fill:#C5E1A5; stroke:#444; stroke-width:1" />
+                   <title>console.log(&apos;Clicked:&apos;, notifId)</title>
+            <text x="139" y="3495.5"
+                font-family="monospace" font-size="13" fill="#222">
+                <tspan x="139" y="3495.5">console.log(&apos;Clicked:&apos;, notifId)</tspan>
+            </text>
+                   
+                   
+                </g>
+            <g>
+               <rect x="25" y="13.75"
+            width="216.6" height="24"
+            style="fill:#fff59d; stroke:#444; stroke-width:1" />
+               <circle cx="25" cy="25" r="15"
+        style="fill:#fff59d; stroke:#444; stroke-width:1" />
+               <title>Program: source module</title>
+            <text x="55" y="30"
+                font-family="monospace" font-size="13" fill="#222">
+                <tspan x="55" y="30">Program: source module</tspan>
+            </text>
+            </g>
+            <g>
+               <path d="M25, 40 L25 76 Q25 80
+                29 80
+                L42 80 "
+        style="fill:none; stroke:#444; stroke-width:1" />
+               <path d="M42, 77 L50, 80 L42, 83 Z" 
+        fill="#333" />
+            </g>
+            <g>
+               <path d="M68.5, 95 L68.5 124.5 Q68.5 128.5
+                72.5 128.5
+                L87 128.5 "
+        style="fill:none; stroke:#444; stroke-width:1" />
+               false
+            </g>
+            <g>
+               <path d="M105.5, 143.5 L105.5 188 Q105.5 192
+                109.5 192
+                L116 192 "
+        style="fill:none; stroke:#444; stroke-width:1" />
+               <path d="M116, 189 L124, 192 L116, 195 Z" 
+        fill="#333" />
+            </g>
+            <g>
+               <path d="M154, 222 L154 243 Q154 247
+                158 247
+                L166 247 "
+        style="fill:none; stroke:#444; stroke-width:1" />
+               <path d="M166, 244 L174, 247 L166, 250 Z" 
+        fill="#333" />
+            </g>
+            <g>
+               <path d="M192.5, 262 L192.5 291.5 Q192.5 295.5
+                196.5 295.5
+                L203 295.5 "
+        style="fill:none; stroke:#444; stroke-width:1" />
+               <path d="M203, 292.5 L211, 295.5 L203, 298.5 Z" 
+        fill="#333" />
+            </g>
+            <g>
+               <path d="M229.5, 310.5 L229.5 340 Q229.5 344
+                233.5 344
+                L248 344 "
+        style="fill:none; stroke:#444; stroke-width:1" />
+               false
+            </g>
+            <g>
+               <path d="M229.5, 310.5 L229.5 388.5 Q229.5 392.5
+                233.5 392.5
+                L248 392.5 "
+        style="fill:none; stroke:#444; stroke-width:1" />
+               false
+            </g>
+            <g>
+               <path d="M229.5, 310.5 L229.5 437 Q229.5 441
+                233.5 441
+                L248 441 "
+        style="fill:none; stroke:#444; stroke-width:1" />
+               false
+            </g>
+            <g>
+               <path d="M229.5, 310.5 L229.5 485.5 Q229.5 489.5
+                233.5 489.5
+                L248 489.5 "
+        style="fill:none; stroke:#444; stroke-width:1" />
+               false
+            </g>
+            <g>
+               <path d="M25, 40 L25 535.5 Q25 539.5
+                29 539.5
+                L42 539.5 "
+        style="fill:none; stroke:#444; stroke-width:1" />
+               <path d="M42, 536.5 L50, 539.5 L42, 542.5 Z" 
+        fill="#333" />
+            </g>
+            <g>
+               <path d="M68.5, 554.5 L68.5 584 Q68.5 588
+                72.5 588
+                L87 588 "
+        style="fill:none; stroke:#444; stroke-width:1" />
+               false
+            </g>
+            <g>
+               <path d="M105.5, 603 L105.5 647.5 Q105.5 651.5
+                109.5 651.5
+                L116 651.5 "
+        style="fill:none; stroke:#444; stroke-width:1" />
+               <path d="M116, 648.5 L124, 651.5 L116, 654.5 Z" 
+        fill="#333" />
+            </g>
+            <g>
+               <path d="M154, 681.5 L154 702.5 Q154 706.5
+                158 706.5
+                L166 706.5 "
+        style="fill:none; stroke:#444; stroke-width:1" />
+               <path d="M166, 703.5 L174, 706.5 L166, 709.5 Z" 
+        fill="#333" />
+            </g>
+            <g>
+               <path d="M192.5, 721.5 L192.5 751 Q192.5 755
+                196.5 755
+                L203 755 "
+        style="fill:none; stroke:#444; stroke-width:1" />
+               <path d="M203, 752 L211, 755 L203, 758 Z" 
+        fill="#333" />
+            </g>
+            <g>
+               <path d="M229.5, 770 L229.5 799.5 Q229.5 803.5
+                233.5 803.5
+                L248 803.5 "
+        style="fill:none; stroke:#444; stroke-width:1" />
+               false
+            </g>
+            <g>
+               <path d="M25, 40 L25 849.5 Q25 853.5
+                29 853.5
+                L42 853.5 "
+        style="fill:none; stroke:#444; stroke-width:1" />
+               <path d="M42, 850.5 L50, 853.5 L42, 856.5 Z" 
+        fill="#333" />
+            </g>
+            <g>
+               <path d="M68.5, 868.5 L68.5 898 Q68.5 902
+                72.5 902
+                L87 902 "
+        style="fill:none; stroke:#444; stroke-width:1" />
+               false
+            </g>
+            <g>
+               <path d="M105.5, 917 L105.5 961.5 Q105.5 965.5
+                109.5 965.5
+                L116 965.5 "
+        style="fill:none; stroke:#444; stroke-width:1" />
+               <path d="M116, 962.5 L124, 965.5 L116, 968.5 Z" 
+        fill="#333" />
+            </g>
+            <g>
+               <path d="M154, 995.5 L154 1016.5 Q154 1020.5
+                158 1020.5
+                L166 1020.5 "
+        style="fill:none; stroke:#444; stroke-width:1" />
+               <path d="M166, 1017.5 L174, 1020.5 L166, 1023.5 Z" 
+        fill="#333" />
+            </g>
+            <g>
+               <path d="M154, 995.5 L154 1065 Q154 1069
+                158 1069
+                L166 1069 "
+        style="fill:none; stroke:#444; stroke-width:1" />
+               <path d="M166, 1066 L174, 1069 L166, 1072 Z" 
+        fill="#333" />
+            </g>
+            <g>
+               <path d="M192.5, 1084 L192.5 1113.5 Q192.5 1117.5
+                196.5 1117.5
+                L203 1117.5 "
+        style="fill:none; stroke:#444; stroke-width:1" />
+               <path d="M203, 1114.5 L211, 1117.5 L203, 1120.5 Z" 
+        fill="#333" />
+            </g>
+            <g>
+               <path d="M229.5, 1132.5 L229.5 1162 Q229.5 1166
+                233.5 1166
+                L248 1166 "
+        style="fill:none; stroke:#444; stroke-width:1" />
+               false
+            </g>
+            <g>
+               <path d="M229.5, 1132.5 L229.5 1210.5 Q229.5 1214.5
+                233.5 1214.5
+                L248 1214.5 "
+        style="fill:none; stroke:#444; stroke-width:1" />
+               false
+            </g>
+            <g>
+               <path d="M229.5, 1132.5 L229.5 1259 Q229.5 1263
+                233.5 1263
+                L248 1263 "
+        style="fill:none; stroke:#444; stroke-width:1" />
+               false
+            </g>
+            <g>
+               <path d="M229.5, 1132.5 L229.5 1307.5 Q229.5 1311.5
+                233.5 1311.5
+                L248 1311.5 "
+        style="fill:none; stroke:#444; stroke-width:1" />
+               false
+            </g>
+            <g>
+               <path d="M105.5, 917 L105.5 1372.5 Q105.5 1376.5
+                109.5 1376.5
+                L116 1376.5 "
+        style="fill:none; stroke:#444; stroke-width:1" />
+               <path d="M116, 1373.5 L124, 1376.5 L116, 1379.5 Z" 
+        fill="#333" />
+            </g>
+            <g>
+               <path d="M154, 1406.5 L154 1427.5 Q154 1431.5
+                158 1431.5
+                L166 1431.5 "
+        style="fill:none; stroke:#444; stroke-width:1" />
+               <path d="M166, 1428.5 L174, 1431.5 L166, 1434.5 Z" 
+        fill="#333" />
+            </g>
+            <g>
+               <path d="M192.5, 1446.5 L192.5 1476 Q192.5 1480
+                196.5 1480
+                L203 1480 "
+        style="fill:none; stroke:#444; stroke-width:1" />
+               <path d="M203, 1477 L211, 1480 L203, 1483 Z" 
+        fill="#333" />
+            </g>
+            <g>
+               <path d="M229.5, 1495 L229.5 1524.5 Q229.5 1528.5
+                233.5 1528.5
+                L248 1528.5 "
+        style="fill:none; stroke:#444; stroke-width:1" />
+               false
+            </g>
+            <g>
+               <path d="M229.5, 1495 L229.5 1573 Q229.5 1577
+                233.5 1577
+                L248 1577 "
+        style="fill:none; stroke:#444; stroke-width:1" />
+               false
+            </g>
+            <g>
+               <path d="M229.5, 1495 L229.5 1621.5 Q229.5 1625.5
+                233.5 1625.5
+                L248 1625.5 "
+        style="fill:none; stroke:#444; stroke-width:1" />
+               false
+            </g>
+            <g>
+               <path d="M229.5, 1495 L229.5 1670 Q229.5 1674
+                233.5 1674
+                L248 1674 "
+        style="fill:none; stroke:#444; stroke-width:1" />
+               false
+            </g>
+            <g>
+               <path d="M229.5, 1495 L229.5 1718.5 Q229.5 1722.5
+                233.5 1722.5
+                L248 1722.5 "
+        style="fill:none; stroke:#444; stroke-width:1" />
+               false
+            </g>
+            <g>
+               <path d="M105.5, 917 L105.5 1783.5 Q105.5 1787.5
+                109.5 1787.5
+                L116 1787.5 "
+        style="fill:none; stroke:#444; stroke-width:1" />
+               <path d="M116, 1784.5 L124, 1787.5 L116, 1790.5 Z" 
+        fill="#333" />
+            </g>
+            <g>
+               <path d="M154, 1817.5 L154 1838.5 Q154 1842.5
+                158 1842.5
+                L166 1842.5 "
+        style="fill:none; stroke:#444; stroke-width:1" />
+               <path d="M166, 1839.5 L174, 1842.5 L166, 1845.5 Z" 
+        fill="#333" />
+            </g>
+            <g>
+               <path d="M192.5, 1857.5 L192.5 1887 Q192.5 1891
+                196.5 1891
+                L203 1891 "
+        style="fill:none; stroke:#444; stroke-width:1" />
+               <path d="M203, 1888 L211, 1891 L203, 1894 Z" 
+        fill="#333" />
+            </g>
+            <g>
+               <path d="M229.5, 1906 L229.5 1935.5 Q229.5 1939.5
+                233.5 1939.5
+                L248 1939.5 "
+        style="fill:none; stroke:#444; stroke-width:1" />
+               false
+            </g>
+            <g>
+               <path d="M229.5, 1906 L229.5 1984 Q229.5 1988
+                233.5 1988
+                L248 1988 "
+        style="fill:none; stroke:#444; stroke-width:1" />
+               false
+            </g>
+            <g>
+               <path d="M229.5, 1906 L229.5 2032.5 Q229.5 2036.5
+                233.5 2036.5
+                L248 2036.5 "
+        style="fill:none; stroke:#444; stroke-width:1" />
+               false
+            </g>
+            <g>
+               <path d="M229.5, 1906 L229.5 2081 Q229.5 2085
+                233.5 2085
+                L248 2085 "
+        style="fill:none; stroke:#444; stroke-width:1" />
+               false
+            </g>
+            <g>
+               <path d="M229.5, 1906 L229.5 2129.5 Q229.5 2133.5
+                233.5 2133.5
+                L248 2133.5 "
+        style="fill:none; stroke:#444; stroke-width:1" />
+               false
+            </g>
+            <g>
+               <path d="M266.5, 2148.5 L266.5 2178 Q266.5 2182
+                270.5 2182
+                L277 2182 "
+        style="fill:none; stroke:#444; stroke-width:1" />
+               <path d="M277, 2179 L285, 2182 L277, 2185 Z" 
+        fill="#333" />
+            </g>
+            <g>
+               <path d="M303.5, 2197 L303.5 2226.5 Q303.5 2230.5
+                307.5 2230.5
+                L322 2230.5 "
+        style="fill:none; stroke:#444; stroke-width:1" />
+               false
+            </g>
+            <g>
+               <path d="M303.5, 2197 L303.5 2275 Q303.5 2279
+                307.5 2279
+                L322 2279 "
+        style="fill:none; stroke:#444; stroke-width:1" />
+               false
+            </g>
+            <g>
+               <path d="M266.5, 2148.5 L266.5 2323.5 Q266.5 2327.5
+                270.5 2327.5
+                L277 2327.5 "
+        style="fill:none; stroke:#444; stroke-width:1" />
+               <path d="M277, 2324.5 L285, 2327.5 L277, 2330.5 Z" 
+        fill="#333" />
+            </g>
+            <g>
+               <path d="M303.5, 2342.5 L303.5 2372 Q303.5 2376
+                307.5 2376
+                L322 2376 "
+        style="fill:none; stroke:#444; stroke-width:1" />
+               false
+            </g>
+            <g>
+               <path d="M303.5, 2342.5 L303.5 2420.5 Q303.5 2424.5
+                307.5 2424.5
+                L322 2424.5 "
+        style="fill:none; stroke:#444; stroke-width:1" />
+               false
+            </g>
+            <g>
+               <path d="M266.5, 2148.5 L266.5 2469 Q266.5 2473
+                270.5 2473
+                L277 2473 "
+        style="fill:none; stroke:#444; stroke-width:1" />
+               <path d="M277, 2470 L285, 2473 L277, 2476 Z" 
+        fill="#333" />
+            </g>
+            <g>
+               <path d="M303.5, 2488 L303.5 2517.5 Q303.5 2521.5
+                307.5 2521.5
+                L322 2521.5 "
+        style="fill:none; stroke:#444; stroke-width:1" />
+               false
+            </g>
+            <g>
+               <path d="M303.5, 2488 L303.5 2566 Q303.5 2570
+                307.5 2570
+                L322 2570 "
+        style="fill:none; stroke:#444; stroke-width:1" />
+               false
+            </g>
+            <g>
+               <path d="M105.5, 917 L105.5 2631 Q105.5 2635
+                109.5 2635
+                L116 2635 "
+        style="fill:none; stroke:#444; stroke-width:1" />
+               <path d="M116, 2632 L124, 2635 L116, 2638 Z" 
+        fill="#333" />
+            </g>
+            <g>
+               <path d="M154, 2665 L154 2686 Q154 2690
+                158 2690
+                L166 2690 "
+        style="fill:none; stroke:#444; stroke-width:1" />
+               <path d="M166, 2687 L174, 2690 L166, 2693 Z" 
+        fill="#333" />
+            </g>
+            <g>
+               <path d="M154, 2665 L154 2734.5 Q154 2738.5
+                158 2738.5
+                L166 2738.5 "
+        style="fill:none; stroke:#444; stroke-width:1" />
+               <path d="M166, 2735.5 L174, 2738.5 L166, 2741.5 Z" 
+        fill="#333" />
+            </g>
+            <g>
+               <path d="M192.5, 2753.5 L192.5 2783 Q192.5 2787
+                196.5 2787
+                L211 2787 "
+        style="fill:none; stroke:#444; stroke-width:1" />
+               false
+            </g>
+            <g>
+               <path d="M229.5, 2802 L229.5 2846.5 Q229.5 2850.5
+                233.5 2850.5
+                L240 2850.5 "
+        style="fill:none; stroke:#444; stroke-width:1" />
+               <path d="M240, 2847.5 L248, 2850.5 L240, 2853.5 Z" 
+        fill="#333" />
+            </g>
+            <g>
+               <path d="M278, 2880.5 L278 2901.5 Q278 2905.5
+                282 2905.5
+                L290 2905.5 "
+        style="fill:none; stroke:#444; stroke-width:1" />
+               <path d="M290, 2902.5 L298, 2905.5 L290, 2908.5 Z" 
+        fill="#333" />
+            </g>
+            <g>
+               <path d="M278, 2880.5 L278 2950 Q278 2954
+                282 2954
+                L290 2954 "
+        style="fill:none; stroke:#444; stroke-width:1" />
+               <path d="M290, 2951 L298, 2954 L290, 2957 Z" 
+        fill="#333" />
+            </g>
+            <g>
+               <path d="M229.5, 2802 L229.5 3000 Q229.5 3004
+                233.5 3004
+                L240 3004 "
+        style="fill:none; stroke:#444; stroke-width:1" />
+               <path d="M240, 3001 L248, 3004 L240, 3007 Z" 
+        fill="#333" />
+            </g>
+            <g>
+               <path d="M266.5, 3019 L266.5 3048.5 Q266.5 3052.5
+                270.5 3052.5
+                L277 3052.5 "
+        style="fill:none; stroke:#444; stroke-width:1" />
+               <path d="M277, 3049.5 L285, 3052.5 L277, 3055.5 Z" 
+        fill="#333" />
+            </g>
+            <g>
+               <path d="M303.5, 3067.5 L303.5 3097 Q303.5 3101
+                307.5 3101
+                L322 3101 "
+        style="fill:none; stroke:#444; stroke-width:1" />
+               false
+            </g>
+            <g>
+               <path d="M303.5, 3067.5 L303.5 3145.5 Q303.5 3149.5
+                307.5 3149.5
+                L322 3149.5 "
+        style="fill:none; stroke:#444; stroke-width:1" />
+               false
+            </g>
+            <g>
+               <path d="M303.5, 3067.5 L303.5 3194 Q303.5 3198
+                307.5 3198
+                L322 3198 "
+        style="fill:none; stroke:#444; stroke-width:1" />
+               false
+            </g>
+            <g>
+               <path d="M303.5, 3067.5 L303.5 3242.5 Q303.5 3246.5
+                307.5 3246.5
+                L322 3246.5 "
+        style="fill:none; stroke:#444; stroke-width:1" />
+               false
+            </g>
+            <g>
+               <path d="M303.5, 3067.5 L303.5 3291 Q303.5 3295
+                307.5 3295
+                L322 3295 "
+        style="fill:none; stroke:#444; stroke-width:1" />
+               false
+            </g>
+            <g>
+               <path d="M229.5, 2802 L229.5 3339.5 Q229.5 3343.5
+                233.5 3343.5
+                L240 3343.5 "
+        style="fill:none; stroke:#444; stroke-width:1" />
+               <path d="M240, 3340.5 L248, 3343.5 L240, 3346.5 Z" 
+        fill="#333" />
+            </g>
+            <g>
+               <path d="M25, 40 L25 3389.5 Q25 3393.5
+                29 3393.5
+                L42 3393.5 "
+        style="fill:none; stroke:#444; stroke-width:1" />
+               <path d="M42, 3390.5 L50, 3393.5 L42, 3396.5 Z" 
+        fill="#333" />
+            </g>
+            <g>
+               <path d="M68.5, 3408.5 L68.5 3438 Q68.5 3442
+                72.5 3442
+                L87 3442 "
+        style="fill:none; stroke:#444; stroke-width:1" />
+               false
+            </g>
+            <g>
+               <path d="M105.5, 3457 L105.5 3486.5 Q105.5 3490.5
+                109.5 3490.5
+                L116 3490.5 "
+        style="fill:none; stroke:#444; stroke-width:1" />
+               <path d="M116, 3487.5 L124, 3490.5 L116, 3493.5 Z" 
+        fill="#333" />
+            </g>
+            </svg>

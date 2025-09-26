@@ -1,0 +1,610 @@
+body {
+    font-family: arial, Verdana, sans-serif;
+    font-size: 12px;
+    width: auto;
+    overflow: visible;
+    margin: 0;
+    padding: 0;
+
+    font-family: "Segoe UI", Roboto, sans-serif;
+    color: #888;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+    width: max-content;
+
+
+}
+
+/* i made this one */
+i {
+    padding: 0 10px;
+    font-size: 17px;
+    color: #4a90e2;
+
+}
+
+/* imade it */
+#main-menu {
+    display: flex;
+    flex-direction: column;
+    padding: 8px;
+}
+
+.menu-item {
+    /* white-space: nowrap;
+    line-height: 26px;
+    cursor: default;
+    border: 1px solid rgba(255, 255, 255, .01);
+    border-radius: 3px;
+    padding: 0 6px;
+    padding-right: 25px;
+    -webkit-user-select: none;
+    user-select: none; */
+
+    display: flex;
+    align-items: center;
+    padding: 10px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.2s, transform 0.1s;
+    /* justify-content: center; */
+}
+
+.menu-item:hover {
+    background: #f4f6fa;
+    transform: translateX(2px);
+}
+
+.menu-item.noicon {
+    padding-right: 6px
+}
+
+.menu-item.noicon .menu-item-text {
+    padding-left: 0
+}
+
+.menu-item.disabled {
+    color: #999
+}
+
+.menu-item.disabled:hover {
+    background: 0 0
+}
+
+.menu-separator {
+    width: 100%;
+    border-top: 1px solid #ddd;
+    margin: 5px 0;
+    /* i did it */
+    height: 1px;
+    background: #e4e6eb;
+    margin: 2px 0;
+    border-radius: 1px;
+}
+
+.menu-item-text {
+    display: inline-block;
+    line-height: 20px;
+    padding-left: 5px;
+    background-position: left center;
+    background-repeat: no-repeat;
+    background-size: 16px 16px;
+    /* i did this */
+    flex: 1;
+    color: #222;
+}
+
+#eyedropper-menuitem {
+    font-weight: 700
+}
+
+#eyedropper-menuitem.active {
+    -webkit-animation-name: pulsate;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-timing-function: ease-in-out;
+    -webkit-animation-iteration-count: infinite
+}
+
+@-webkit-keyframes pulsate {
+    0% {
+        opacity: .45
+    }
+
+    50% {
+        opacity: 1
+    }
+
+    100% {
+        opacity: .45
+    }
+}
+
+#main-menu:hover #eyedropper-menuitem.active {
+    -webkit-animation-name: none
+}
+
+.menu-item-text {
+    background-size: 18px 18px
+}
+
+#eyedropper-menuitem .menu-item-text {
+    /* background-image: url('/images/material/dropper.svg') */
+}
+
+#system-eyedropper-menuitem .menu-item-text {
+    /* background-image: url('/images/material/eyedropper-circle.svg') */
+}
+
+#color-picker-menuitem .menu-item-text {
+    /* background-image: url('/images/material/color.svg') */
+}
+
+#page-color-analyzer-menuitem .menu-item-text {
+    /* background-image: url('/images/material/examine.svg') */
+}
+
+#gradient-generator-menuitem .menu-item-text {
+    /* background-image: url('/images/material/gradient_linear.svg') */
+}
+
+#show-history-menuitem .menu-item-text {
+    /* background-image: url('/images/material/history.svg') */
+}
+
+#help-menuitem .menu-item-text {
+    /* background-image: url('/images/material/help.svg') */
+}
+
+#options-menuitem .menu-item-text {
+    /* background-image: url('/images/material/gear.svg') */
+}
+
+#resample-last-location-menuitem .menu-item-text {
+    /* background-image: url('/images/material/update.svg') */
+}
+
+#palette-browser-menuitem .menu-item-text {
+    /* background-image: url('/images/material/art_palette.svg') */
+}
+
+#error-message-menuitem .menu-item-text {
+    /* background-image: url('/images/material/warning.svg') */
+}
+
+.copy-op-menuitem .menu-item-text {
+    /* background-image: url('/images/material/copy.svg') */
+}
+
+#help-translate-menuitem .menu-item-text,
+#report-translation-issue-menuitem .menu-item-text {
+    /* background-image: url('/images/material/speech_ballon.svg') */
+}
+
+#help-translate-menuitem,
+#report-translation-issue-menuitem,
+.help-translate-separator,
+.report-translation-issue-separator {
+    display: none
+}
+
+#error-message-menuitem {
+    color: #000 !important;
+    font-weight: 700
+}
+
+.menu-item .warning {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    background-size: 18px 18px;
+    /* need to chang thsi svg */
+    background-image: url('/images/material/warning.svg');
+    margin-left: 5px;
+    vertical-align: middle
+}
+
+#color-picker-menuitem {
+    position: relative
+}
+
+#color-picker-menuitem .current-color {
+    position: absolute;
+    left: 7px;
+    top: 4px;
+    width: 13px;
+    height: 15px;
+    background: #fff;
+    border: 1px solid #999;
+    display: none;
+    /* i did this */
+    width: 16px;
+    height: 16px;
+    border-radius: 4px;
+    margin-right: 8px;
+    border: 1px solid #ddd;
+}
+
+#color-picker-menuitem.color-selected .menu-item-text {
+    background-image: none
+}
+
+#color-picker-menuitem.color-selected .current-color {
+    display: block
+}
+
+.main-panel {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background: linear-gradient(to bottom, #fff 0, #fafafa 100%);
+    /* i did it */
+    padding: 12px;
+    font-size: 14px;
+}
+
+#colorpicker table {
+    margin: 0 auto;
+    background: 0 0;
+    border: none
+}
+
+table.jPicker {
+    padding: 0
+}
+
+table.jPicker .Button {
+    vertical-align: top
+}
+
+.jPicker .Grid span.QuickColor {
+    border: 1px solid #ddd;
+    /* i did it */
+        width: 24px;
+    height: 24px;
+    margin: 1px;
+    border-radius: 7px;
+    border: 1px solid wheat;
+}
+
+table.jPicker hr {
+    -webkit-margin-after: 5px
+}
+
+table.jPicker .history-header {
+    margin-bottom: 2px;
+    text-align: left
+}
+
+.colorpicker-css-output {
+    width: 545px;
+    margin: 0 auto;
+    padding-left: 18px
+}
+
+.colorpicker-css-output input.hsl-color,
+.colorpicker-css-output input.rgb-color {
+    width: 125px;
+    font-size: 13px
+}
+
+.dialog-button {
+    width: 85px;
+    padding: 2px 0;
+    /* i did it */
+    background: #4a90e2;
+    color: #fff;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-size: 13px;
+    cursor: pointer;
+    transition: background 0.2s;
+    margin-right: 6px;
+}
+
+/* i did it */
+.dialog-button:hover {
+    background: #357ab7;
+}
+
+/* i did it */
+input[type="text"] {
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 6px 8px;
+    font-size: 13px;
+    width: 100%;
+    margin: 4px 0;
+    background: #fafafa;
+    color: #333;
+}
+
+/* i did it */
+input[type="text"]:focus {
+    border-color: #4a90e2;
+    outline: none;
+    background: #fff;
+}
+
+#webpage-color-analyzer-panel {
+    padding: 16px;
+    width: 400px
+}
+
+#webpage-color-analyzer-panel h1 {
+    font-size: 14px;
+    margin: 0;
+    padding: 0
+}
+
+#webpage-color-analyzer-panel .colors-container {
+    /* min-height: 33px; */
+    /* max-height: 175px; */
+    margin: 10px 0;
+    overflow: auto;
+    /* border-bottom: 2px solid #fff; */
+    /* border-left: 2px solid #9a9a9a; */
+    /* border-right: 2px solid #fff; */
+    /* border-top: 2px solid #9a9a9a; */
+    /* i did it */
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    flex-wrap: wrap;
+}
+
+#webpage-color-analyzer-panel .colors-container .color-panel {
+    width: 30px;
+    height: 30px;
+    float: left;
+    border: 1px inset #ddd;
+    cursor: pointer;
+
+    /* i did it */
+    margin: 3px;
+    border: none;
+    border-radius: 5px;
+}
+
+#webpage-color-analyzer-panel .colors-container .color-panel.active {
+    border: 1px solid red
+}
+
+#webpage-color-analyzer-panel .colors-container .please-wait {
+    margin: 10px;
+    display: block
+}
+
+#webpage-color-analyzer-panel.initial-state .selected-color-info {
+    display: none
+}
+
+#webpage-color-analyzer-panel .selected-color-info .rgb-color {
+    width: 120px;
+    margin: 4px 0 0 0;
+    vertical-align: top
+}
+
+#webpage-color-analyzer-panel .selected-color-info .hex-color {
+    width: 70px;
+    margin: 4px 0 0 0;
+    vertical-align: top
+}
+
+#webpage-color-analyzer-panel .selected-color-info .elem-info {
+    margin-top: 5px;
+    /* line-height: 30px; */
+    /* display: inline-block; */
+    /* vertical-align: top; */
+    /* overflow: auto; */
+    /* max-height: 200px */
+    display: flex;
+    flex-wrap: wrap;
+    overflow: auto;
+
+
+}
+
+#webpage-color-analyzer-panel .selected-color-info .elem-info .color-selector {
+    white-space: nowrap;
+    margin: 2px;
+    background: #ddd;
+    padding: 2px 6px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    /* i did it */
+    text-align: center;
+    border-radius: 6px;
+    padding: 6px 8px;
+    font-size: 13px;
+}
+
+#webpage-color-analyzer-panel .button-container {
+    text-align: right;
+    clear: both;
+    margin-top: 10px
+}
+
+#palette-browser-panel {
+    width: 530px;
+    height: 300px
+}
+
+#palette-browser-panel .column {
+    float: left
+}
+
+#palette-browser-panel .column-1 {
+    width: 280px
+}
+
+#palette-browser-panel .column-2 {
+    width: 230px
+}
+
+/* i did it */
+.palette-chooser {
+    /* width: 100%; */
+        width: max-content;
+
+    padding: 5px 12px;
+    border-radius: 5px;
+    border: 1px solid #171616;
+    background: #ffffff;
+    font-size: 15px;
+    color: #2f3640;
+    /* appearance: none; */
+    /* removes default arrow */
+    outline: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+/* i did it */
+.palette-chooser:hover {
+    border-color: #718093;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* i did it */
+.palette-chooser:focus {
+    border-color: #273c75;
+    box-shadow: 0 0 0 3px rgba(39, 60, 117, 0.2);
+}
+
+#palette-browser-panel .palette-chooser-container {
+    height: 35px;
+    margin: 0 0 0 10px
+}
+
+#palette-browser-panel .palette-colors {
+    margin: 0 0 10px 10px;
+    width: 260px;
+    height: 260px;
+    overflow: auto
+}
+
+#palette-browser-panel .color-panel {
+    float: left;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    cursor: crosshair;
+    /* i did it */
+    border-radius: 4px;
+
+}
+
+#palette-browser-panel .color-panel.active {
+    border: 1px solid #000000
+}
+
+#palette-browser-panel .current-color {
+    /* border: 2px inset #eee; */
+    width: 62px;
+    height: 62px;
+    margin: 35px 0 10px 30px;
+    background: #fff;
+    /* i did this */
+    /* width: 16px; */
+    /* height: 16px; */
+    border-radius: 9px;
+    margin-right: 8px;
+    /* border: 1px solid #ddd; */
+    border: 1px solid #000000
+}
+
+
+#palette-browser-panel .color-name {
+    width: 120px;
+    margin-left: 30px;
+    /* i did it */
+    display: none;
+}
+
+#palette-browser-panel .color-rgb-label {
+    width: 28px;
+    text-align: right;
+    padding-right: 2px;
+    display: inline-block;
+    /* i did it */
+    font-size: 12px;
+    font-weight: 600;
+    color: #555;
+}
+
+#palette-browser-panel .color-rgb {
+    width: 30px;
+    /* i did it */
+    border: 1px solid black;
+}
+
+#palette-browser-panel .color-hex {
+    width: 65px;
+    margin-left: 30px;
+    /* i did it */
+    position: absolute;
+    top: 43px;
+    right: 52px;
+    border: 1px solid black;
+}
+
+#palette-browser-panel .button-container {
+    /* margin: 30px 0 0 30px */
+    /* i did it */
+    margin-top: 5px;
+}
+
+.status-panel,
+.status-panel * {
+    vertical-align: middle
+}
+
+.status-panel {
+    display: inline-block;
+    text-wrap: nowrap;
+    padding: 10px 15px;
+    background: linear-gradient(to bottom, #1a1a1a 0, #000 100%);
+    color: #fff;
+    font-family: arial, Verdana, sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    /* i did it */
+    padding: 12px;
+    font-size: 14px;
+}
+
+.status-panel .sampling {
+    font-weight: 700
+}
+
+.status-panel .colorzilla-copied-color-square {
+    display: inline-block;
+    margin-right: 5px;
+    width: 25px;
+    height: 25px;
+    border: 1px solid #fff
+}
+
+.status-panel .colorzilla-copied-message {
+    font-weight: 700;
+    padding-left: 25px;
+    background: no-repeat center left url('/images/checkmark-icon.svg');
+    background-size: 18px 18px
+}
+
+.status-panel .colorzilla-sep {
+    color: #666;
+    margin: 0 5px
+}
+
+.status-panel .colorzilla-property {
+    color: #bbb
+}
+
+.menu-item .new-feature {
+    background: #0078d7;
+    color: #fff;
+    border-radius: 5px;
+    padding: 2px 5px;
+    margin-left: 5px;
+    font-size: 11px
+}

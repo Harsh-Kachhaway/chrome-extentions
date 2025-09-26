@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   tabCount();
 
-  // 🔹 Helpers
+  //  Helpers
 
   function createTabUI(tab) {
     const title = tab.title || "no title";

@@ -1,0 +1,115 @@
+/* ===== Modern ColorZilla Popup ===== */
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", Roboto, sans-serif;
+    background: #ffffff;
+    color: #888;
+    width: 280px;
+    /* keep it compact */
+    border-radius: 12px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+}
+
+/* Main menu container */
+#main-menu {
+    display: flex;
+    flex-direction: column;
+    padding: 8px;
+}
+/* i made this one */
+i {
+    padding: 0 10px;
+    font-size: 15px;
+    color: #4a90e2;
+    
+}
+
+/* Menu item styling */
+.menu-item {
+    display: flex;
+    align-items: center;
+    padding: 10px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.2s, transform 0.1s;
+    justify-content: space-between;
+}
+
+.menu-item:hover {
+    background: #f4f6fa;
+    transform: translateX(2px);
+}
+
+/* Text inside menu */
+.menu-item-text {
+    flex: 1;
+    color: #222;
+}
+
+/* Current color preview (if visible) */
+.current-color {
+    width: 16px;
+    height: 16px;
+    border-radius: 4px;
+    margin-right: 8px;
+    border: 1px solid #ddd;
+}
+
+/* Separators */
+.menu-separator {
+    height: 1px;
+    background: #e4e6eb;
+    margin: 6px 0;
+    border-radius: 1px;
+}
+
+/* Panels (hidden by default) */
+.main-panel,
+.status-panel {
+    padding: 12px;
+    font-size: 14px;
+}
+
+/* Buttons */
+.dialog-button {
+    background: #4a90e2;
+    color: #fff;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-size: 13px;
+    cursor: pointer;
+    transition: background 0.2s;
+    margin-right: 6px;
+}
+
+.dialog-button:hover {
+    background: #357ab7;
+}
+
+/* Inputs for colors */
+input[type="text"] {
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 6px 8px;
+    font-size: 13px;
+    width: 100%;
+    margin: 4px 0;
+    background: #fafafa;
+    color: #333;
+}
+
+input[type="text"]:focus {
+    border-color: #4a90e2;
+    outline: none;
+    background: #fff;
+}
+
+/* Small labels */
+.color-rgb-label {
+    font-size: 12px;
+    font-weight: 600;
+    color: #555;
+}

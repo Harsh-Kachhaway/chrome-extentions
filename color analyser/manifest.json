@@ -1,0 +1,10 @@
+{
+  "manifest_version": 3,
+  "name": "Page Color Analyzer",
+  "version": "1.0",
+  "description": "Analyze colors on a webpage with their selectors",
+  "permissions": ["scripting", "activeTab"],
+  "action": {
+    "default_popup": "popup.html"
+  }
+}
