@@ -139,47 +139,49 @@ function onPointerDown(e) {
 }
 
 function onClickCapture(e) {
-  // prevent page navigation
   e.preventDefault();
   e.stopPropagation();
 
-  if (!imageLoaded || !canvas || !ctx) {
-    // still loading: show message
-    updateOverlayHint("Preparing screenshot... please wait");
-    return;
-  }
+  // recapture the visible screen ON CLICK (fix scroll issue)
+  chrome.runtime.sendMessage({ type: "CAPTURE_SCREEN" }, (res) => {
+    if (!res || !res.success) {
+      updateOverlayHint("Screenshot failed");
+      return;
+    }
 
-  // compute coordinates relative to viewport and convert to image pixels
-  // clientX/clientY are viewport CSS pixels
-  const clientX = e.clientX;
-  const clientY = e.clientY;
+    const img2 = new Image();
+    img2.src = res.imageUri;
 
-  // Calculate device pixel coordinate according to devicePixelRatio and scroll
-  // captureVisibleTab captures the currently visible viewport. Use window.devicePixelRatio and scroll offsets.
-  const dpr = window.devicePixelRatio || 1;
-  const x_img = Math.round((clientX + window.scrollX) * dpr);
-  const y_img = Math.round((clientY + window.scrollY) * dpr);
+    img2.onload = () => {
+      const dpr = window.devicePixelRatio || 1;
 
-  // Clamp to canvas bounds
-  const xClamped = Math.min(Math.max(x_img, 0), canvas.width - 1);
-  const yClamped = Math.min(Math.max(y_img, 0), canvas.height - 1);
+      // make fresh canvas for new screenshot
+      const tempCanvas = document.createElement("canvas");
+      tempCanvas.width = img2.width;
+      tempCanvas.height = img2.height;
+      const tempCtx = tempCanvas.getContext("2d");
 
-  try {
-    const pixel = ctx.getImageData(xClamped, yClamped, 1, 1).data;
-    const [r, g, b, a] = pixel;
-    const hex = rgbToHex(r, g, b);
-    // send result to background or show UI (for now we log and show a tiny overlay)
-    console.log("Picked color:", { r, g, b, a, hex });
+      tempCtx.drawImage(img2, 0, 0);
 
-    // show quick result in overlay
-    showResultOverlay(hex, r, g, b);
-  } catch (err) {
-    console.error("getImageData failed:", err);
-    updateOverlayHint("Error reading pixel");
-  }
+      const clientX = e.clientX;
+      const clientY = e.clientY;
 
-  // cleanup after a short delay so user sees result
-  setTimeout(teardown, 00);
+      const x = Math.round(clientX * dpr);
+      const y = Math.round(clientY * dpr);
+
+      // read pixel
+      try {
+        const pixel = tempCtx.getImageData(x, y, 1, 1).data;
+        const hex = rgbToHex(pixel[0], pixel[1], pixel[2]);
+
+        showResultOverlay(hex);
+      } catch (err) {
+        updateOverlayHint("Error reading pixel");
+      }
+    };
+  });
+
+  setTimeout(teardown, 5000);
 }
 
 function onKeyDown(e) {

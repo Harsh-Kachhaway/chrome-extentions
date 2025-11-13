@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       target: { tabId: tab.id },
       func: () => {
         if (typeof startPicker === "function") startPicker();
-        else alert("Content script not ready yet.");
+        else alert("Content script not loaded");
       },
     });
 

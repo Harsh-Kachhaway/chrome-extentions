@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Color Picker Test — Scrollable Boxes</title>
+  <style>
+    :root{--gap:12px;--box-size:160px}
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;margin:0;background:#f5f6f8;color:#111}
+    header{position:sticky;top:0;background:#fff;border-bottom:1px solid rgba(0,0,0,0.06);padding:12px 16px;z-index:10}
+    header h1{margin:0;font-size:16px}
+    header p{margin:6px 0 0;font-size:13px;color:#555}
+
+    .wrap{max-width:1200px;margin:20px auto;padding:0 16px}
+    .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(var(--box-size),1fr));gap:var(--gap)}
+
+    .box{height:var(--box-size);display:flex;align-items:center;justify-content:center;border-radius:8px;color:#fff;font-weight:700;box-shadow:0 2px 6px rgba(0,0,0,0.06);user-select:none}
+    .meta{font-size:12px;backdrop-filter:blur(4px);padding:6px 8px;border-radius:999px;background:rgba(255,255,255,0.25)}
+
+    /* make page tall so you can scroll a lot */
+    .spacer{height:48px}
+
+    footer{padding:28px 16px;text-align:center;color:#666;font-size:13px}
+
+    @media (max-width:420px){:root{--box-size:120px}}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Color Picker Test</h1>
+    <p>Click any box with your color picker. Page is intentionally scrollable (lots of boxes).</p>
+  </header>
+
+  <main class="wrap">
+    <div class="grid" id="grid">
+      <!-- boxes injected by script -->
+    </div>
+    <div class="spacer"></div>
+  </main>
+
+  <footer>Open this file in Chrome, activate your color picker extension and try clicking different boxes.</footer>
+
+  <script>
+    const colors = [
+      '#FF3B30','#FF9500','#FFCC00','#4CD964','#34C759','#5AC8FA','#007AFF','#5856D6','#AF52DE','#FF2D55',
+      '#1ABC9C','#2ECC71','#3498DB','#9B59B6','#34495E','#16A085','#27AE60','#2980B9','#8E44AD','#2C3E50',
+      '#E74C3C','#E67E22','#F1C40F','#2ECC71','#1ABC9C','#3498DB','#9B59B6','#34495E','#95A5A6','#7F8C8D',
+      '#D35400','#C0392B','#BDC3C7','#ECF0F1','#95A5A6','#F39C12','#8E44AD','#2980B9','#27AE60','#16A085',
+      '#FF6B6B','#FFE66D','#6BCB77','#4D96FF','#845EC2','#2C73D2','#FF9671','#F9F871','#00C9A7','#00C9FF'
+    ];
+
+    const grid = document.getElementById('grid');
+
+    // create many rows by repeating color list multiple times
+    const repeat = 6; // creates a long scrollable page
+    for(let r=0;r<repeat;r++){
+      colors.forEach(hex => {
+        const el = document.createElement('div');
+        el.className = 'box';
+        el.style.background = hex;
+        el.textContent = hex;
+        el.setAttribute('data-hex', hex);
+        // ensure text contrast for very light colors
+        const isLight = (hexToRgb(hex).r*0.299 + hexToRgb(hex).g*0.587 + hexToRgb(hex).b*0.114) > 186;
+        if(isLight) el.style.color = '#111';
+        grid.appendChild(el);
+      });
+    }
+
+    function hexToRgb(hex){
+      const h = hex.replace('#','');
+      const bigint = parseInt(h,16);
+      return {r:(bigint>>16)&255,g:(bigint>>8)&255,b:bigint&255};
+    }
+  </script>
+</body>
+</html>
