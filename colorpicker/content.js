@@ -6,6 +6,10 @@ let img = null;
 let picking = false;
 let imageLoaded = false;
 let overlay = null;
+let zoomCanvas = null;
+let zoomCtx = null;
+let lastZoomUpdate = 0;
+
 
 // Listen for message from popup or other parts
 chrome.runtime.onMessage.addListener((msg) => {
@@ -110,7 +114,71 @@ function createOverlay() {
 
   // Cancel on Escape
   window.addEventListener("keydown", onKeyDown, true);
+
+  // create zoom lens canvas
+zoomCanvas = document.createElement("canvas");
+zoomCanvas.width = 120;
+zoomCanvas.height = 120;
+Object.assign(zoomCanvas.style, {
+  position: "fixed",
+  width: "120px",
+  height: "120px",
+  borderRadius: "10px",
+  overflow: "hidden",
+  border: "2px solid rgba(255,255,255,0.7)",
+  boxShadow: "0 4px 12px rgba(0,0,0,0.25)",
+  zIndex: 2147483648,
+  pointerEvents: "none",
+  background: "#fff",
+});
+
+// add to overlay
+overlay.appendChild(zoomCanvas);
+zoomCtx = zoomCanvas.getContext("2d");
+zoomCtx.imageSmoothingEnabled = false;
+
+// follow mouse move
+overlay.addEventListener("pointermove", onZoomLensMove, { passive: true });
+
 }
+
+function onZoomLensMove(e) {
+  const now = performance.now();
+  if (now - lastZoomUpdate < 90) return; // throttle every 90ms
+  lastZoomUpdate = now;
+
+  // position zoom lens near cursor
+  zoomCanvas.style.left = e.clientX + 20 + "px";
+  zoomCanvas.style.top = e.clientY + 20 + "px";
+
+  // get fresh screenshot
+  chrome.runtime.sendMessage({ type: "CAPTURE_SCREEN" }, (res) => {
+    if (!res?.success) return;
+
+    const img = new Image();
+    img.src = res.imageUri;
+
+    img.onload = () => {
+      const dpr = window.devicePixelRatio || 1;
+
+      const sx = Math.round(e.clientX * dpr - 20);
+      const sy = Math.round(e.clientY * dpr - 20);
+
+      zoomCtx.clearRect(0, 0, zoomCanvas.width, zoomCanvas.height);
+
+      try {
+        zoomCtx.drawImage(
+          img,
+          sx, sy, 40, 40,   // sample 40×40 area
+          0, 0, 120, 120    // zoom to 120×120 (3× zoom)
+        );
+      } catch (err) {
+        // ignore errors
+      }
+    };
+  });
+}
+
 
 function updateOverlayHint(text) {
   const h = document.getElementById("ext-colorpicker-hint");
@@ -249,6 +317,13 @@ function teardown() {
   const sq = document.getElementById("ext-colorpicker-result-square");
   if (sq) sq.parentNode?.removeChild(sq);
   picking = false;
+
+  if (zoomCanvas) {
+  zoomCanvas.remove();
+  zoomCanvas = null;
+  zoomCtx = null;
+}
+
 }
 
 /* ---------- Helpers ---------- */
@@ -268,3 +343,7 @@ function rgbToHex(r, g, b) {
 /* ---------- Expose startPicker in page context so scripting.executeScript can call it ----------
    If you prefer not to expose, you can keep using chrome.runtime message. */
 window.startPicker = startPicker;
+
+
+
+///////////////////////////////////////////////
