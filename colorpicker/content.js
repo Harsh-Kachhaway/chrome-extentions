@@ -30,24 +30,26 @@ function startPicker() {
 
   // ask background to capture visible tab
   chrome.runtime.sendMessage({ type: "CAPTURE_SCREEN" }, (res) => {
-  if (!res?.success) { teardown(); return; }
+    if (!res?.success) {
+      teardown();
+      return;
+    }
 
-  const img2 = new Image();
-  img2.src = res.imageUri;
+    const img2 = new Image();
+    img2.src = res.imageUri;
 
-  img2.onload = () => {
-    cachedImage = img2;
-    cachedCanvas = document.createElement("canvas");
-    cachedCanvas.width = img2.width;
-    cachedCanvas.height = img2.height;
-    cachedCtx = cachedCanvas.getContext("2d");
-    cachedCtx.drawImage(img2, 0, 0);
+    img2.onload = () => {
+      cachedImage = img2;
+      cachedCanvas = document.createElement("canvas");
+      cachedCanvas.width = img2.width;
+      cachedCanvas.height = img2.height;
+      cachedCtx = cachedCanvas.getContext("2d");
+      cachedCtx.drawImage(img2, 0, 0);
 
-    imageLoaded = true;
-    updateOverlayHint("Click to pick color — Esc to cancel");
-  };
-});
-
+      imageLoaded = true;
+      updateOverlayHint("Click to pick color — Esc to cancel");
+    };
+  });
 }
 
 /* ---------- Canvas setup ---------- */
@@ -188,28 +190,49 @@ function onClickCapture(e) {
   e.preventDefault();
   e.stopPropagation();
 
-  if (!cachedCtx) {
-    updateOverlayHint("Screenshot not ready");
-    return;
-  }
+  // hide zoom lens before screen capture
+  if (zoomCanvas) zoomCanvas.style.visibility = "hidden";
 
-  const dpr = window.devicePixelRatio || 1;
-  const x = Math.round(e.clientX * dpr);
-  const y = Math.round(e.clientY * dpr);
+  chrome.runtime.sendMessage({ type: "CAPTURE_SCREEN" }, (res) => {
+    // restore zoom lens
+    if (zoomCanvas) zoomCanvas.style.visibility = "visible";
 
-  let pixel;
-  try {
-    pixel = cachedCtx.getImageData(x, y, 1, 1).data;
-  } catch {
-    updateOverlayHint("Error reading pixel");
-    return;
-  }
+    if (!res?.success) {
+      updateOverlayHint("Screenshot failed");
+      return;
+    }
 
-  const hex = rgbToHex(pixel[0], pixel[1], pixel[2]);
-  showResultOverlay(hex);
-  tryCopyToClipboard(hex);
+    const img = new Image();
+    img.src = res.imageUri;
 
-  setTimeout(teardown, 3000);
+    img.onload = () => {
+      const dpr = window.devicePixelRatio || 1;
+
+      const tempCanvas = document.createElement("canvas");
+      tempCanvas.width = img.width;
+      tempCanvas.height = img.height;
+      const tempCtx = tempCanvas.getContext("2d");
+
+      tempCtx.drawImage(img, 0, 0);
+
+      const x = Math.round(e.clientX * dpr);
+      const y = Math.round(e.clientY * dpr);
+
+      let pixel;
+      try {
+        pixel = tempCtx.getImageData(x, y, 1, 1).data;
+      } catch (err) {
+        updateOverlayHint("Pixel read error");
+        return;
+      }
+
+      const hex = rgbToHex(pixel[0], pixel[1], pixel[2]);
+      showResultOverlay(hex);
+      tryCopyToClipboard(hex);
+
+      setTimeout(teardown, 3000);
+    };
+  });
 }
 
 function onKeyDown(e) {
@@ -323,6 +346,9 @@ function onZoomMove(e) {
 }
 
 function onScroll() {
+  console.log("working");
+  if (zoomCanvas) zoomCanvas.style.visibility = "hidden";
+
   lastScrollTime = Date.now();
 
   if (scrollTimeout) clearTimeout(scrollTimeout);
@@ -330,7 +356,9 @@ function onScroll() {
   scrollTimeout = setTimeout(() => {
     // scrolling stopped → refresh screenshot
     chrome.runtime.sendMessage({ type: "CAPTURE_SCREEN" }, (res) => {
+      if (zoomCanvas) zoomCanvas.style.visibility = "visible";
       if (!res?.success) return;
+
       const img2 = new Image();
       img2.src = res.imageUri;
 
