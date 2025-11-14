@@ -7,14 +7,12 @@ let picking = false;
 let imageLoaded = false;
 let overlay = null;
 
-let cachedImage = null;     // main screenshot
-let cachedCanvas = null;    // canvas for screenshot
+let cachedImage = null; // main screenshot
+let cachedCanvas = null; // canvas for screenshot
 let cachedCtx = null;
 
 let lastScrollTime = 0;
 let scrollTimeout = null;
-
-
 
 // Listen for message from popup or other parts
 chrome.runtime.onMessage.addListener((msg) => {
@@ -31,7 +29,7 @@ function startPicker() {
   createOverlay();
 
   // ask background to capture visible tab
-chrome.runtime.sendMessage({ type: "CAPTURE_SCREEN" }, (res) => {
+  chrome.runtime.sendMessage({ type: "CAPTURE_SCREEN" }, (res) => {
   if (!res?.success) { teardown(); return; }
 
   const img2 = new Image();
@@ -49,18 +47,7 @@ chrome.runtime.sendMessage({ type: "CAPTURE_SCREEN" }, (res) => {
     updateOverlayHint("Click to pick color — Esc to cancel");
   };
 });
-    if (chrome.runtime.lastError) {
-      console.error("Message error:", chrome.runtime.lastError.message);
-      teardown();
-      return;
-    }
-    if (!res || !res.success) {
-      console.error("Failed to capture:", res?.error);
-      teardown();
-      return;
-    }
-    setupCanvas(res.imageUri);
-  });
+
 }
 
 /* ---------- Canvas setup ---------- */
@@ -129,38 +116,43 @@ function createOverlay() {
   overlay.appendChild(hint);
 
   // create zoom lens
-zoomCanvas = document.createElement("canvas");
-zoomCanvas.width = 120;
-zoomCanvas.height = 120;
-Object.assign(zoomCanvas.style, {
-  position: "fixed",
-  width: "120px",
-  height: "120px",
-  borderRadius: "10px",
-  overflow: "hidden",
-  border: "2px solid rgba(255,255,255,0.7)",
-  boxShadow: "0 4px 12px rgba(0,0,0,0.25)",
-  zIndex: 2147483648,
-  pointerEvents: "none",
-  background: "#fff",
-});
+  zoomCanvas = document.createElement("canvas");
+  zoomCanvas.width = 120;
+  zoomCanvas.height = 120;
+  Object.assign(zoomCanvas.style, {
+    position: "fixed",
+    width: "120px",
+    height: "120px",
+    borderRadius: "10px",
+    overflow: "hidden",
+    border: "2px solid rgba(255,255,255,0.7)",
+    boxShadow: "0 4px 12px rgba(0,0,0,0.25)",
+    zIndex: 2147483648,
+    pointerEvents: "none",
+    background: "#fff",
+  });
 
-overlay.appendChild(zoomCanvas);
-zoomCtx = zoomCanvas.getContext("2d");
-zoomCtx.imageSmoothingEnabled = false;
+  overlay.appendChild(zoomCanvas);
+  zoomCtx = zoomCanvas.getContext("2d");
+  zoomCtx.imageSmoothingEnabled = false;
 
-// follow pointer, but use cached screenshot
-overlay.addEventListener("pointermove", onZoomMove, { passive: true });
+  // follow pointer, but use cached screenshot
+  overlay.addEventListener("pointermove", onZoomMove, { passive: true });
 
-// detect scroll stop
-window.addEventListener("scroll", onScroll, { passive: true });
-
+  // detect scroll stop
+  window.addEventListener("scroll", onScroll, { passive: true });
 
   document.documentElement.appendChild(overlay);
 
   // Use pointerdown/click in capture phase and non-passive so we can preventDefault
-  overlay.addEventListener("pointerdown", onPointerDown, { capture: true, passive: false });
-  overlay.addEventListener("click", onClickCapture, { capture: true, passive: false });
+  overlay.addEventListener("pointerdown", onPointerDown, {
+    capture: true,
+    passive: false,
+  });
+  overlay.addEventListener("click", onClickCapture, {
+    capture: true,
+    passive: false,
+  });
 
   // Cancel on Escape
   window.addEventListener("keydown", onKeyDown, true);
@@ -318,8 +310,14 @@ function onZoomMove(e) {
   try {
     zoomCtx.drawImage(
       cachedImage,
-      sx, sy, 40, 40,
-      0, 0, 120, 120     // zoom output
+      sx,
+      sy,
+      40,
+      40,
+      0,
+      0,
+      120,
+      120 // zoom output
     );
   } catch (_) {}
 }
@@ -345,7 +343,6 @@ function onScroll() {
     });
   }, 160); // wait for scroll to stop
 }
-
 
 /* ---------- Expose startPicker in page context so scripting.executeScript can call it ----------
    If you prefer not to expose, you can keep using chrome.runtime message. */
