@@ -230,7 +230,6 @@ function onClickCapture(e) {
       showResultOverlay(hex);
       tryCopyToClipboard(hex);
 
-      setTimeout(teardown, 3000);
     };
   });
 }
