@@ -11,6 +11,15 @@ let zoomCtx = null;
 let lastZoomUpdate = 0;
 
 
+let cachedImage = null;     // main screenshot
+let cachedCanvas = null;    // canvas for screenshot
+let cachedCtx = null;
+
+let lastScrollTime = 0;
+let scrollTimeout = null;
+
+
+
 // Listen for message from popup or other parts
 chrome.runtime.onMessage.addListener((msg) => {
   if (msg?.type === "START_PICKER") startPicker();
@@ -26,7 +35,24 @@ function startPicker() {
   createOverlay();
 
   // ask background to capture visible tab
-  chrome.runtime.sendMessage({ type: "CAPTURE_SCREEN" }, (res) => {
+chrome.runtime.sendMessage({ type: "CAPTURE_SCREEN" }, (res) => {
+  if (!res?.success) { teardown(); return; }
+
+  const img2 = new Image();
+  img2.src = res.imageUri;
+
+  img2.onload = () => {
+    cachedImage = img2;
+    cachedCanvas = document.createElement("canvas");
+    cachedCanvas.width = img2.width;
+    cachedCanvas.height = img2.height;
+    cachedCtx = cachedCanvas.getContext("2d");
+    cachedCtx.drawImage(img2, 0, 0);
+
+    imageLoaded = true;
+    updateOverlayHint("Click to pick color — Esc to cancel");
+  };
+});
     if (chrome.runtime.lastError) {
       console.error("Message error:", chrome.runtime.lastError.message);
       teardown();
@@ -105,6 +131,34 @@ function createOverlay() {
   });
   hint.textContent = "Click to pick color — Esc to cancel";
   overlay.appendChild(hint);
+
+  // create zoom lens
+zoomCanvas = document.createElement("canvas");
+zoomCanvas.width = 120;
+zoomCanvas.height = 120;
+Object.assign(zoomCanvas.style, {
+  position: "fixed",
+  width: "120px",
+  height: "120px",
+  borderRadius: "10px",
+  overflow: "hidden",
+  border: "2px solid rgba(255,255,255,0.7)",
+  boxShadow: "0 4px 12px rgba(0,0,0,0.25)",
+  zIndex: 2147483648,
+  pointerEvents: "none",
+  background: "#fff",
+});
+
+overlay.appendChild(zoomCanvas);
+zoomCtx = zoomCanvas.getContext("2d");
+zoomCtx.imageSmoothingEnabled = false;
+
+// follow pointer, but use cached screenshot
+overlay.addEventListener("pointermove", onZoomMove, { passive: true });
+
+// detect scroll stop
+window.addEventListener("scroll", onScroll, { passive: true });
+
 
   document.documentElement.appendChild(overlay);
 
@@ -210,46 +264,28 @@ function onClickCapture(e) {
   e.preventDefault();
   e.stopPropagation();
 
-  // recapture the visible screen ON CLICK (fix scroll issue)
-  chrome.runtime.sendMessage({ type: "CAPTURE_SCREEN" }, (res) => {
-    if (!res || !res.success) {
-      updateOverlayHint("Screenshot failed");
-      return;
-    }
+  if (!cachedCtx) {
+    updateOverlayHint("Screenshot not ready");
+    return;
+  }
 
-    const img2 = new Image();
-    img2.src = res.imageUri;
+  const dpr = window.devicePixelRatio || 1;
+  const x = Math.round(e.clientX * dpr);
+  const y = Math.round(e.clientY * dpr);
 
-    img2.onload = () => {
-      const dpr = window.devicePixelRatio || 1;
+  let pixel;
+  try {
+    pixel = cachedCtx.getImageData(x, y, 1, 1).data;
+  } catch {
+    updateOverlayHint("Error reading pixel");
+    return;
+  }
 
-      // make fresh canvas for new screenshot
-      const tempCanvas = document.createElement("canvas");
-      tempCanvas.width = img2.width;
-      tempCanvas.height = img2.height;
-      const tempCtx = tempCanvas.getContext("2d");
+  const hex = rgbToHex(pixel[0], pixel[1], pixel[2]);
+  showResultOverlay(hex);
+  tryCopyToClipboard(hex);
 
-      tempCtx.drawImage(img2, 0, 0);
-
-      const clientX = e.clientX;
-      const clientY = e.clientY;
-
-      const x = Math.round(clientX * dpr);
-      const y = Math.round(clientY * dpr);
-
-      // read pixel
-      try {
-        const pixel = tempCtx.getImageData(x, y, 1, 1).data;
-        const hex = rgbToHex(pixel[0], pixel[1], pixel[2]);
-
-        showResultOverlay(hex);
-      } catch (err) {
-        updateOverlayHint("Error reading pixel");
-      }
-    };
-  });
-
-  setTimeout(teardown, 5000);
+  setTimeout(teardown, 3000);
 }
 
 function onKeyDown(e) {
@@ -339,6 +375,52 @@ function rgbToHex(r, g, b) {
       .toUpperCase()
   );
 }
+
+function onZoomMove(e) {
+  if (!cachedImage || !zoomCtx) return;
+
+  // move zoom lens near cursor
+  zoomCanvas.style.left = e.clientX + 20 + "px";
+  zoomCanvas.style.top = e.clientY + 20 + "px";
+
+  const dpr = window.devicePixelRatio || 1;
+
+  const sx = Math.round(e.clientX * dpr - 20);
+  const sy = Math.round(e.clientY * dpr - 20);
+
+  zoomCtx.clearRect(0, 0, zoomCanvas.width, zoomCanvas.height);
+
+  try {
+    zoomCtx.drawImage(
+      cachedImage,
+      sx, sy, 40, 40,
+      0, 0, 120, 120     // zoom output
+    );
+  } catch (_) {}
+}
+
+function onScroll() {
+  lastScrollTime = Date.now();
+
+  if (scrollTimeout) clearTimeout(scrollTimeout);
+
+  scrollTimeout = setTimeout(() => {
+    // scrolling stopped → refresh screenshot
+    chrome.runtime.sendMessage({ type: "CAPTURE_SCREEN" }, (res) => {
+      if (!res?.success) return;
+      const img2 = new Image();
+      img2.src = res.imageUri;
+
+      img2.onload = () => {
+        cachedImage = img2;
+        cachedCanvas.width = img2.width;
+        cachedCanvas.height = img2.height;
+        cachedCtx.drawImage(img2, 0, 0);
+      };
+    });
+  }, 160); // wait for scroll to stop
+}
+
 
 /* ---------- Expose startPicker in page context so scripting.executeScript can call it ----------
    If you prefer not to expose, you can keep using chrome.runtime message. */
