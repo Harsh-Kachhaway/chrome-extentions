@@ -1,0 +1,15 @@
+.clas_download_all {
+  margin-left: 12px;
+  padding: 4px 10px;
+  font-size: 12px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  background: #1a73e8;
+  color: white;
+  white-space: nowrap;
+}
+
+.clas_download_all:hover {
+  background: #1558b0;
+}

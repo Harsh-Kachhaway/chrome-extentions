@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "Classroom Bulk Downloader",
+  "version": "1.0",
+  "description": "Download all files from a Google Classroom post into a folder",
+  "permissions": ["downloads"],
+  "host_permissions": [
+    "https://classroom.google.com/*",
+    "https://drive.google.com/*",
+    "https://docs.google.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://classroom.google.com/*"],
+      "js": ["content.js"],
+      "css": ["content.css"]
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  }
+}
