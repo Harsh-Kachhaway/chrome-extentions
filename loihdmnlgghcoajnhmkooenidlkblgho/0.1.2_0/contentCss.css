@@ -19,3 +19,9 @@
   background-color: rgba(60, 64, 67, 0.1);
   border-radius: 50%;
 }
+.FHXi2c {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

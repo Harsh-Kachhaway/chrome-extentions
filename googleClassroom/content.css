@@ -1,0 +1,20 @@
+.QRiHXd {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    background: white !important;
+}
+.pOf0gc{
+    border-radius: 10px;
+    border: .0625rem solid var(--gm3-sys-color-outline-variant, #c4c7c5)!important;
+}
+.riU7le {
+    border: none !important;
+}
+.clas_download_icon_btn{
+    margin: 10px;
+    border: .0625rem solid var(--gm3-sys-color-outline-variant, #c4c7c5)!important;
+    border-radius: 5px;
+    padding: 3px;
+    background: #fdfcfc;
+}
