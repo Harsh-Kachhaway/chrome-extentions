@@ -1,0 +1,29 @@
+{
+   "action": {
+      "default_popup": "popup.html"
+   },
+   "background": {
+      "service_worker": "background.js"
+   },
+   "content_scripts": [ {
+      "css": [ "contentCss.css" ],
+      "js": [ "contentScript.js" ],
+      "matches": [ "https://classroom.google.com/*" ]
+   } ],
+   "description": "Instant download buttons next to files in Classroom",
+   "icons": {
+      "128": "assets/128x128.png",
+      "16": "assets/16x16.png",
+      "24": "assets/24x24.png",
+      "32": "assets/32x32.png",
+      "48": "assets/48x48.png",
+      "64": "assets/64x64.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAlxnUQHs6tQvfNDT6qkb+8NekBniZXGg7FbmHoRq5kO4PJRtXHIE+T6ryAmPn6baESeoxqJ7kEYfmIbXgaEwnBTRPkqBx2rUIvGyNXe+Cl190gjkpqykG/c8n80MJKI7RT1GnnljyP4DlyKBjPE2gs6o7hcG02l6fvxnw8FRjEJ+bBgpdRSS0ZUVoukati2exPXVK+TDnWl1CVmvXfNpu2u4yac8gfnSvEVCMFLV9hRZOZIqyrP77KA5tgSWhDOv4nLBgQ2m0l7e0CdMcv9qaf1vNe475ID8UX9i8xN8kQzxsstKz+UZv3G3tJ+NWJHjGBFP9HvkfoplJVpiEteZylQIDAQAB",
+   "manifest_version": 3,
+   "name": "Download Buttons in Classroom",
+   "permissions": [ "tabs" ],
+   "short_name": "Classroom",
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "0.1.2"
+}

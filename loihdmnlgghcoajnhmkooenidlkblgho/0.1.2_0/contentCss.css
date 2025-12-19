@@ -1,0 +1,21 @@
+.clas_download_icon_btn {
+  min-height: 38px !important;
+  min-width: 38px !important;
+  aspect-ratio: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.clas_download_icon_btn svg {
+  height: 28px;
+  width: 28px;
+  aspect-ratio: 1;
+  stroke: #5f6368;
+}
+
+.clas_download_icon_btn:hover {
+  background-color: rgba(60, 64, 67, 0.1);
+  border-radius: 50%;
+}
