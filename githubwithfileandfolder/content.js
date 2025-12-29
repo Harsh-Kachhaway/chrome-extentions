@@ -28,7 +28,7 @@ function injectDownloadButtons() {
     const isFolder = link.href.includes("/tree/");
 
     const btn = document.createElement("button");
-    btn.textContent = "⬇";
+    btn.textContent = "Download";
     btn.className = "gh-download-btn";
     btn.title = isFolder ? "Download folder" : "Download file";
 
@@ -65,16 +65,7 @@ function injectDownloadButtons() {
       }
     });
 
-    const td = ageDiv.closest("td");
-    if (!td) return;
-
-    const newTd = document.createElement("td");
-    newTd.className = "gh-download-cell";
-
-    newTd.appendChild(btn);
-
-    // insert as new column in the same row
-    row.appendChild(newTd);
+    ageDiv.insertAdjacentElement("afterend", btn);
   });
 }
 
