@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "GitHub Folder & File Downloader",
+  "description": "Download individual files or entire folders from GitHub with correct structure.",
+  "version": "1.0.0",
+
+  "permissions": ["downloads"],
+
+  "host_permissions": [
+    "https://github.com/*",
+    "https://api.github.com/*",
+    "https://raw.githubusercontent.com/*"
+  ],
+
+  "background": {
+    "service_worker": "background.js"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["https://github.com/*"],
+      "js": ["content.js"],
+      "css": ["style.css"],
+      "run_at": "document_idle"
+    }
+  ]
+}
